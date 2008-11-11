@@ -1,0 +1,7 @@
+#element1 {
+    border: 1px solid black;
+    height: 250px;
+    width: 250px;
+    background-color: #ccc;
+    padding: 1em;
+}
