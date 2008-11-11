@@ -1,0 +1,11 @@
+body {
+    font-family: verdana;
+}
+
+#demo {
+    border: 1px solid black;
+    background-color: #ccc;
+    font-weight: bold;
+    margin: 2em;
+    padding: 2em;
+}
