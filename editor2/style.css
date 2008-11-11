@@ -1,0 +1,205 @@
+        .yuiEditor_wrapper {
+            width: 525px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            margin: 2px;
+        }
+        .yuiEditor_toolbar {
+            border: 1px solid #000;
+            background-color: #ccc;
+            margin-bottom: 2px;
+        }
+        .yuiEditor {
+            width: 523px;
+            border: 1px solid black;
+        }
+        .yui_buttonlist {
+            margin: 2px;
+            padding: 2px 15px 2px 2px;
+            height: 16px;
+            display: block;
+            border: 1px solid #000;
+            background-color: #fff;
+            background-image: url(graphics/downarrow.gif);
+            background-position: center right;
+            background-repeat: no-repeat;
+            font-size: 10px;
+            text-align: left;
+            cursor: hand;
+            cursor: pointer;
+            position: relative;
+            height: 20px;
+        }
+        .yui_listholder {
+            position: relative;
+            float: left;
+        }
+        .yui_buttonholder {
+            position: relative;
+            float: left;
+            background-color: #ccc;
+            width: 20px;
+        }
+        .yui_buttonholder button {
+            background-color: #ccc;
+        }
+        .yui_listholder ul {
+            z-index: 9999;
+            position: absolute;
+            top: 21px;
+            left: 2px;
+            border: 1px solid #000;
+            background-color: #fff;
+            color: #000;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+        .yui_listholder li {
+            padding: 2px;
+            cursor: hand;
+            cursor: pointer;
+        }
+        .yui_listholder ul li a {
+            text-decoration: none;
+            display: block;
+            border: 1px solid #fff;
+            padding: 2px;
+            cursor: hand;
+            cursor: pointer;
+            color: #000;
+        }
+        .yui_listholder ul li a:hover {
+            border: 1px solid #7777B5;
+            cursor: hand;
+            cursor: pointer;
+            color: #000;
+        }
+
+        .fontface_select {
+            width: 145px;
+        }
+        .menu_fontsize {
+            width: 55px;
+        }
+        .menu_fontface {
+            width: 141px;
+        }
+        .yui_button {
+            margin: 2px;
+            padding: 0;
+            height: 20px;
+            width: 20px;
+            display: block;
+            float: left;
+            background-repeat: no-repeat;
+            border: 1px solid #ccc;
+            cursor: hand;
+            cursor: pointer;
+        }
+        .yui_button_sel {
+            margin: 2px;
+            padding: 0;
+            height: 20px;
+            width: 20px;
+            display: block;
+            float: left;
+            background-repeat: no-repeat;
+            border-top: 1px solid #b3b3b3;
+            border-left: 1px solid #b3b3b3;
+            border-right: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .yui_button_disable {
+            margin: 2px;
+            padding: 0;
+            height: 20px;
+            width: 20px;
+            display: block;
+            float: left;
+            background-repeat: no-repeat;
+            opacity: .5;
+            border: 1px solid #ccc;
+        }
+        .yui_button:hover {
+            /*border: 1px solid #000;*/
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #b3b3b3;
+            border-bottom: 1px solid #b3b3b3;
+            cursor: hand;
+            cursor: pointer;
+        }
+        .yui_spacer {
+            height: 20px;
+            width: 5px;
+            display: block;
+            background-repeat: no-repeat;
+            background-image: url(graphics/separator.gif);
+            background-position: 4px 2px;
+            float: left;
+        }
+        .toolbar_drop {
+            z-index: 9999;
+            position: absolute;
+            top: 18px;
+            border: 1px solid #000;
+            background-color: #ccc;
+            width: 161px;
+            padding: 0;
+            margin: 0;
+        }
+        .toolbar_drop li {
+            height: 9px;
+            width: 9px;
+            display: block;
+            float: left;
+            margin: 1px;
+            padding: 0;
+            border: 1px solid #ccc;
+        }
+        .menu_smiley li {
+            height: 20px;
+            width: 20px;
+            display: block;
+            float: left;
+            margin: 1px;
+            padding: 0;
+            border: 1px solid #ccc;   
+        }
+        .menu_smiley img { border: 0; }
+        .new { background-image: url(graphics/new.gif); }
+        .bold { background-image: url(graphics/bold.gif); }
+        .italic { background-image: url(graphics/italic.gif); }
+        .underline { background-image: url(graphics/underline.gif); }
+        .anchor { background-image: url(graphics/anchor.gif); }
+        .strikethrough { background-image: url(graphics/strikethrough.gif); }
+        .unlink { background-image: url(graphics/unlink.gif); }
+        .justifyleft { background-image: url(graphics/justifyleft.gif); }
+        .justifyright { background-image: url(graphics/justifyright.gif); }
+        .justifycenter { background-image: url(graphics/justifycenter.gif); }
+        .ol { background-image: url(graphics/ol.gif); }
+        .ul { background-image: url(graphics/ul.gif); }
+        .toolbar_smiley { background-image: url(graphics/smiley.gif); position: relative; background-position: -2px -2px;}
+        .toolbar_forecolor { background-image: url(graphics/forecolor.gif); position: relative; background-position: -2px -2px; }
+        .toolbar_backcolor { background-image: url(graphics/backcolor.gif); position: relative; background-position: -2px -2px; }
+        .outdent { background-image: url(graphics/outdent.gif); }
+        .indent { background-image: url(graphics/indent.gif); }
+        #debug_holder {
+            position: fixed;
+            *position: absolute;
+            top: 0;
+            right: 0;
+            height: 450px;
+            width: 250px;
+            border: 1px solid red;
+            background-color: #fff;
+            overflow: auto;
+            text-align: left;
+            font-size: small;
+            z-index: 999;
+        }
+        form, p {
+            margin: .25em 2em;
+        }

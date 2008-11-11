@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<style type="text/css">
+body {
+	margin:0;
+	padding:0;
+}
+</style>
+
+<!-- Yahoo UI styles and javascripts -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.0/build/assets/skins/sam/skin.css">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.0/build/fonts/fonts-min.css" />
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.0/build/container/assets/skins/sam/container.css" />
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.0/build/menu/assets/skins/sam/menu.css" />
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.0/build/button/assets/skins/sam/button.css" />
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.0/build/editor/assets/skins/sam/editor.css" />
+
+
+<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/utilities/utilities.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/dragdrop/dragdrop-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/container/container-min.js"></script>	
+<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/menu/menu-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/button/button-beta-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/editor/editor-beta-min.js"></script>
+
+
+<script> 
+var myEditor;
+
+YAHOO.namespace("example.container");
+
+function init() {
+	// Instantiate a Panel from markup
+	YAHOO.example.container.panel1 = new YAHOO.widget.Panel("panel1", { width:"600px", visible:false, constraintoviewport:true } );
+	YAHOO.example.container.panel1.render();
+	YAHOO.util.Event.addListener("show1", "click", YAHOO.example.container.panel1.show, YAHOO.example.container.panel1, true);
+	YAHOO.util.Event.addListener("hide1", "click", YAHOO.example.container.panel1.hide, YAHOO.example.container.panel1, true);
+
+  if (!myEditor) {
+    myEditor = new YAHOO.widget.Editor('Hello', { 
+    height: '300px', 
+    width: '100%', 
+    dompath: false, 
+    animate: false 
+   }); 	
+ myEditor.render(); 	  		
+}
+	
+}
+
+YAHOO.util.Event.addListener(window, "load", init);
+</script>
+
+</head>
+
+<body class="yui-skin-sam" >
+
+<style>
+	  .exeTable {width:800px;border-spacing:0px}
+	  #container {height:15em;}
+</style>
+	
+<div id="container">
+<div><button id="show1">Show panel1</button><button id="hide1">Hide panel1</button></div>
+<div id="panel1">
+<div class="hd">Tutor Note</div>
+<div class="bd"><textarea id="Hello">Hello World</textarea></div>
+<div class="ft">End of Panel 1</div>
+</div>
+</div>
+<div>Test Text Test Text Test Text Test Text Test Text</div>
+<div>Test Text Test Text Test Text Test Text Test Text</div>
+<div>Test Text Test Text Test Text Test Text Test Text</div>
+<div>Test Text Test Text Test Text Test Text Test Text</div>
+<div>Test Text Test Text Test Text Test Text Test Text</div>
+<div>Test Text Test Text Test Text Test Text Test Text</div>
+<div>Test Text Test Text Test Text Test Text Test Text</div>
+<div>Test Text Test Text Test Text Test Text Test Text</div>
+<div>Test Text Test Text Test Text Test Text Test Text</div>
+<div>Test Text Test Text Test Text Test Text Test Text</div>
+<div>Test Text Test Text Test Text Test Text Test Text</div>
+  </body>
+</html>
+

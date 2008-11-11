@@ -1,0 +1,38 @@
+--- container.js	2006-10-21 17:39:00.000000000 -0700
++++ container-mod.js	2006-10-21 17:35:51.000000000 -0700
+@@ -3178,9 +3178,25 @@ YAHOO.widget.Dialog.prototype.registerFo
+ 	var form = this.element.getElementsByTagName("FORM")[0];
+ 
+ 	if (! form) {
+-		var formHTML = "<form name=\"frm_" + this.id + "\" action=\"\"></form>";
+-		this.body.innerHTML += formHTML;
+-		form = this.element.getElementsByTagName("FORM")[0];
++        /* 
++        * We couldn't find a form, lets see if there is a form around the panel
++        */
++        var allForms = document.getElementsByTagName('form');
++        for (var i = 0; i < allForms.length; i++) {
++            //Check if the panel is an Ancestor of this form
++            if (YAHOO.util.Dom.isAncestor(allForms[i], this.element)) {
++                //Found a form, use it instead and bail
++                form = allForms[i];
++                //Kill the array of forms
++                allForms = null;
++                break;
++            }
++        }
++	    if (! form) {
++		    var formHTML = "<form name=\"frm_" + this.id + "\" action=\"\"></form>";
++		    this.body.innerHTML += formHTML;
++		    form = this.element.getElementsByTagName("FORM")[0];
++        }
+ 	}
+ 
+ 	this.firstFormElement = function() {
+@@ -3915,4 +3931,4 @@ YAHOO.widget.ContainerEffect.SLIDE = fun
+ 
+ 	slide.init();
+ 	return slide;
+-}
+\ No newline at end of file
++}
