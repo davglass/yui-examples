@@ -1,0 +1,65 @@
+.yuimenu {
+    width: 200px;
+}
+
+.yuimenuitem .yuimenu {
+    margin-left: -1.25em;
+    background-image: url(graphics/vline.gif);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.last-of-type .yuimenu {
+    background-image: none;
+}
+
+.yuimenuitem li a {
+    display: block;
+    margin-left: -1.25em;
+    padding-left: 1.25em;
+    background-image: url(graphics/tn.gif);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.yuimenu ul {
+    margin-left: 2em;
+}
+
+.hassubmenu {
+    position: relative;
+}
+
+.hassubmenu em {
+    display: block;
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    overflow: hidden;
+    left: -1.25em;
+    top: .15em;
+    text-indent: 20em;
+    background-image: url( graphics/tp.gif );
+}
+
+.hassubmenu em.selected {
+    background-image: url( graphics/tm.gif );
+}
+
+.yuimenuitem li.last-of-type a {
+    background-image: url( graphics/ln.gif );
+}
+
+.last-of-type em {
+    background-image: url( graphics/lp.gif );
+}
+.last-of-type em.selected {
+    background-image: url( graphics/lm.gif );
+}
+
+
+.hassubmenu a {
+    text-decoration: none;
+    color: black;
+}
+
