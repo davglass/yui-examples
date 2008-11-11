@@ -1,0 +1,1077 @@
+/* Copyright (c) 2006 Yahoo! Inc. All rights reserved. */
+
+/**********************************************************/
+/**tree.css*****/
+/**********************************************************/
+
+/* first or middle sibling, no children */
+.ygtvtn {
+	width:16px; height:22px; 
+	background: url(tn.gif) 0 0 no-repeat; 
+}
+
+/* first or middle sibling, collapsable */
+.ygtvtm {
+	width:16px; height:22px; 
+	cursor:pointer ;
+	background: url(tm.gif) 0 0 no-repeat; 
+}
+
+/* first or middle sibling, collapsable, hover */
+.ygtvtmh {
+	width:16px; height:22px; 
+	cursor:pointer ;
+	background: url(tmh.gif) 0 0 no-repeat; 
+}
+
+/* first or middle sibling, expandable */
+.ygtvtp {
+	width:16px; height:22px; 
+	cursor:pointer ;
+	background: url(tp.gif) 0 0 no-repeat; 
+}
+
+/* first or middle sibling, expandable, hover */
+.ygtvtph {
+	width:16px; height:22px; 
+	cursor:pointer ;
+	background: url(tph.gif) 0 0 no-repeat; 
+}
+
+/* last sibling, no children */
+.ygtvln {
+	width:16px; height:22px; 
+	background: url(ln.gif) 0 0 no-repeat; 
+}
+
+/* Last sibling, collapsable */
+.ygtvlm {
+	width:16px; height:22px; 
+	cursor:pointer ;
+	background: url(lm.gif) 0 0 no-repeat; 
+}
+
+/* Last sibling, collapsable, hover */
+.ygtvlmh {
+	width:16px; height:22px; 
+	cursor:pointer ;
+	background: url(lmh.gif) 0 0 no-repeat; 
+}
+
+/* Last sibling, expandable */
+.ygtvlp { 
+	width:16px; height:22px; 
+	cursor:pointer ;
+	background: url(lp.gif) 0 0 no-repeat; 
+}
+
+/* Last sibling, expandable, hover */
+.ygtvlph { 
+	width:16px; height:22px; cursor:pointer ;
+	background: url(lph.gif) 0 0 no-repeat; 
+}
+
+/* Loading icon */
+.ygtvloading { 
+	width:16px; height:22px; 
+	background: url(loading.gif) 0 0 no-repeat; 
+}
+
+/* the style for the empty cells that are used for rendering the depth 
+ * of the node */
+.ygtvdepthcell { 
+	width:16px; height:22px; 
+	background: url(vline.gif) 0 0 no-repeat; 
+}
+
+.ygtvblankdepthcell { width:16px; height:22px; }
+
+/* the style of the div around each node */
+.ygtvitem { }  
+
+/* the style of the div around each node's collection of children */
+.ygtvchildren { } 
+
+/* the style of the text label in ygTextNode */
+.ygtvlabel, .ygtvlabel:link, .ygtvlabel:visited, .ygtvlabel:hover { 
+	margin-left:2px;
+	text-decoration: none;
+}
+
+.ygtvspacer { height: 10px; width: 10px; margin: 2px; }
+
+/**********************************************************/
+/**tabs.css*****/
+/**********************************************************/
+/* default space between tabs */
+.yui-navset-top .yui-nav li, .yui-navset-bottom .yui-nav li {
+    margin-right:0.5em; /* horizontal tabs */
+}
+.yui-navset-left .yui-nav li, .yui-navset-right .yui-nav li {
+    margin-bottom:0.5em; /* vertical tabs */
+}
+
+.yui-navset .yui-nav li em { padding:.5em; } /* default tab padding */
+
+/* default width for side tabs */
+.yui-navset-left .yui-nav, .yui-navset-right .yui-nav { width:6em; }
+.yui-navset-left { padding-left:6em; } /* map to nav width */
+.yui-navset-right { padding-right:6em; } /* ditto */
+
+/* core */
+
+.yui-nav, .yui-nav li {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.yui-navset li em { font-style:normal; }
+
+.yui-navset {
+    position:relative; /* contain absolute positioned tabs (left/right) */
+    zoom:1;
+}
+
+.yui-navset .yui-content { zoom:1; }
+
+.yui-navset-top .yui-nav li, .yui-navset-bottom .yui-nav li {
+    display:inline-block;
+    display:-moz-inline-stack;
+    *display:inline; /* IE */
+    vertical-align:bottom; /* safari: for overlap */
+    cursor:pointer; /* gecko: due to -moz-inline-stack on anchor */
+    zoom:1; /* IE: kill space between horizontal tabs */
+}
+
+.yui-navset .yui-nav a {
+    outline:0; /* gecko: keep from shifting */
+}
+
+.yui-navset .yui-nav a { position:relative; } /* IE: to allow overlap */
+
+.yui-navset .yui-nav li a {
+    display:block;
+    zoom:1;
+}
+
+.yui-navset-top .yui-nav li a, .yui-navset-bottom .yui-nav li a {
+    display:inline-block;
+    vertical-align:bottom; /* safari: for overlap */
+}
+
+.yui-navset-bottom .yui-nav li a {
+    vertical-align:text-top; /* for inline overlap (reverse for Op border bug) */
+}
+
+.yui-navset .yui-nav li a em { display:block; }
+
+/* position left and right oriented tabs */
+.yui-navset-left .yui-nav, .yui-navset-right .yui-nav { position:absolute; z-index:1; }
+.yui-navset-left .yui-nav { left:0; }
+.yui-navset-right .yui-nav { right:0; }
+
+/**********************************************************/
+/**border_tabs.css*****/
+/**********************************************************/
+.yui-navset .yui-nav li a, .yui-navset .yui-content {
+    border:1px solid #000;  /* label and content borders */
+}
+
+.yui-navset .yui-nav .selected a, .yui-navset .yui-nav a:hover, .yui-navset .yui-content {
+    background-color:#f6f7ee; /* active tab, tab hover, and content bgcolor */
+}
+
+.yui-navset-top .yui-nav .selected a {
+    border-bottom:0; /* no bottom border for active tab */
+    padding-bottom:1px; /* to match height of other tabs */
+}
+
+.yui-navset-top .yui-content {
+    margin-top:-1px; /* for active tab overlap */
+}
+
+.yui-navset-bottom .yui-nav .selected a {
+    border-top:0; /* no bottom border for active tab */
+    padding-top:1px; /* to match height of other tabs */
+}
+
+.yui-navset-bottom .yui-content {
+    margin-bottom:-1px; /* for active tab overlap */
+}
+
+.yui-navset-left .yui-nav li.selected a {
+    border-right:0; /* no bottom border for active tab */
+    padding-right:1px; /* to match height of other tabs */
+}
+
+.yui-navset-left .yui-content {
+    margin-left:-1px; /* for active tab overlap */
+}
+
+.yui-navset-right .yui-nav li.selected a {
+    border-left:0; /* no bottom border for active tab */
+    padding-left:1px; /* to match height of other tabs */
+}
+
+.yui-navset-right .yui-content {
+    margin-right:-1px; /* for active tab overlap */
+    *margin-right:0; /* except IE */
+}
+/**********************************************************/
+/**menu.css*****/
+/**********************************************************/
+
+/*
+Copyright (c) 2006, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.txt
+Version: 0.12
+*/
+
+
+
+/* Menu styles */
+
+div.yuimenu {
+
+    background-color:#ffffff;
+	border-color:#cccccc;
+    border-style:solid;
+	border-width:1px 1px 1px 1px;
+    padding:1px;
+}
+
+/* Submenus are positioned absolute and hidden by default */
+
+div.yuimenu div.yuimenu,
+div.yuimenubar div.yuimenu {
+
+    position:absolute;
+    visibility:hidden;
+
+}
+
+/* MenuBar Styles */
+
+div.yuimenubar {
+
+    background-color:#ffffff;
+    
+}
+
+/*
+    Applying a width triggers "haslayout" in IE so that the module's
+    body clears its floated elements
+*/
+div.yuimenubar div.bd {
+
+    width:100%;
+
+}
+
+/*
+    Clear the module body for other browsers
+*/
+div.yuimenubar div.bd:after {
+
+    content:'.';
+    display:block;
+    clear:both;
+    visibility:hidden;
+    height:0;
+
+}
+
+
+/* Matches the group title (H6) inside a Menu or MenuBar instance */
+
+div.yuimenu h6,
+div.yuimenubar h6 { 
+
+    font-size:100%;
+    font-weight:normal;    
+    margin:0;
+    border:solid 1px #c4c4be;
+/*     color:#b9b9b9;     */
+	color:#0B333C;
+
+}
+
+div.yuimenubar h6 {
+
+    float:left;
+    display:inline; /* Prevent margin doubling in IE */
+    padding:4px 12px;
+    border-width:0 1px 0 0;
+    
+}
+
+div.yuimenu h6 {
+
+    float:none;
+    display:block;
+    border-width:1px 0 0 0;
+    padding:5px 10px 0 10px;
+
+}
+
+
+/* Matches the UL inside a Menu or MenuBar instance */
+
+div.yuimenubar ul {
+
+    list-style-type:none;
+    margin:0;
+    padding:0;
+
+}
+
+div.yuimenu ul {
+
+    list-style-type:none;
+    border:solid 1px #c4c4be;
+    border-width:1px 0 0 0;
+    margin:0;
+    padding:4px 0;
+
+}
+
+
+div.yuimenu ul.first-of-type, 
+div.yuimenu ul.hastitle,
+div.yuimenu h6.first-of-type {
+
+    border-width:0;
+
+}
+
+/*
+    Styles for the menu's header and footer elements that are used as controls 
+    to scroll the menu's body element when the menu's height exceeds the 
+    value of the "maxheight" configuration property.
+*/
+
+div.yuimenu div.topscrollbar,
+div.yuimenu div.bottomscrollbar {
+
+    height:16px;
+    background-image:url(map.gif);
+    background-repeat:no-repeat;
+
+}
+
+
+div.yuimenu div.topscrollbar {
+
+    background-image:url(map.gif);
+    background-position:center -72px;
+
+}
+
+
+div.yuimenu div.topscrollbar_disabled {
+
+    background-image:url(map.gif);
+    background-position:center -88px;
+
+}
+
+
+div.yuimenu div.bottomscrollbar {
+
+    background-image:url(map.gif);
+    background-position:center -104px;
+
+}
+
+
+div.yuimenu div.bottomscrollbar_disabled {
+
+    background-image:url(map.gif);
+    background-position:center -120px;
+
+}
+
+
+/* MenuItem and MenuBarItem styles */
+
+div.yuimenu li,
+div.yuimenubar li {
+
+    font-size:85%;
+    cursor:pointer;
+    cursor:hand;
+    white-space:nowrap;
+    text-align:left;
+
+}
+
+div.yuimenu li.yuimenuitem {
+
+	padding-top: 2px;
+	padding-right: 18px;
+	padding-bottom: 2px;
+	padding-left: 25px;
+    
+}
+
+div.yuimenu li li,
+div.yuimenubar li li {
+
+    font-size:100%;
+
+}
+
+
+/* Matches the help text for a menu item */
+
+div.yuimenu li.hashelptext em.helptext {
+
+    font-style:normal;
+    margin:0 0 0 40px;
+
+}
+
+div.yuimenu li a,
+div.yuimenubar li a {
+    
+    /*
+        "zoom:1" triggers "haslayout" in IE to ensure that the mouseover and 
+        mouseout events bubble to the parent LI in IE.
+    */
+    zoom:1;
+    color:#0B333C;
+    text-decoration:none;
+    outline: none 0px;
+}
+
+div.yuimenu li.hassubmenu,
+div.yuimenu li.hashelptext {
+
+    text-align:right;
+
+}
+
+div.yuimenu li.hassubmenu a.hassubmenu,
+div.yuimenu li.hashelptext a.hashelptext {
+
+    float:left;
+    display:inline; /* Prevent margin doubling in IE */
+    text-align:left;
+
+}
+
+/* Matches selected menu items */
+
+div.yuimenu li.selected,
+div.yuimenubar li.selected {
+
+  background-color:#AADEFF; /* highlight color */
+/*    background-color:#8c8ad0; */
+
+}
+
+div.yuimenu li.selected a.selected,
+div.yuimenubar li.selected a.selected {
+
+    text-decoration:none; /* hover state */
+
+}
+
+div.yuimenu li.selected a.selected,
+div.yuimenu li.selected em.selected, 
+div.yuimenubar li.selected a.selected {
+
+    /* color:#fff; */ /* rollover text color */
+
+}
+
+
+/* Matches disabled menu items */
+
+div.yuimenu li.disabled, 
+div.yuimenubar li.disabled {
+
+    cursor:default;
+
+}
+
+div.yuimenu li.disabled a.disabled,
+div.yuimenu li.disabled em.disabled,
+div.yuimenubar li.disabled a.disabled {
+
+
+    color:#b9b9b9;
+    cursor:default;
+    
+}
+
+div.yuimenubar li.yuimenubaritem {
+
+    float:left;
+    display:inline; /* Prevent margin doubling in IE */
+    border-width:0 0 0 1px;
+    border-style:solid;
+    border-color:#cccccc;
+	padding-top: 3px;
+	padding-right: 12px;
+	padding-bottom: 3px;
+	padding-left: 25px;
+    margin:0;
+
+}
+
+div.yuimenubar li.yuimenubaritem.first-of-type {
+
+    border-width:0;
+
+}
+
+
+/* Matches the submenu indicator for menu items */
+
+div.yuimenu li.hassubmenu em.submenuindicator, 
+div.yuimenubar li.hassubmenu em.submenuindicator {
+
+    display:-moz-inline-box; /* Mozilla */
+    display:inline-block; /* IE, Opera and Safari */
+    vertical-align:middle;
+    height:8px;
+    width:8px;
+    text-indent:9px;
+    font:0/0 arial;
+    overflow:hidden;
+    background-image:url(map.gif);
+    background-repeat:no-repeat;
+
+}
+
+div.yuimenubar li.hassubmenu em.submenuindicator {
+
+    background-position:0 -24px;
+    margin:0 0 0 10px;
+
+}
+
+div.yuimenubar li.hassubmenu em.submenuindicator.selected {
+
+    background-position:0 -32px;
+
+}
+
+div.yuimenubar li.hassubmenu em.submenuindicator.disabled {
+
+    background-position:0 -40px;
+
+}
+
+div.yuimenu li.hassubmenu em.submenuindicator {
+
+    background-position:0 0;
+    margin:0 -16px 0 10px;
+
+}
+
+div.yuimenu li.hassubmenu em.submenuindicator.selected {
+
+    background-position:0 -8px;
+
+}
+
+div.yuimenu li.hassubmenu em.submenuindicator.disabled {
+
+    background-position:0 -16px;
+
+}
+
+/* Styles for a menu item's "checked" state */
+
+div.yuimenu li.checked {
+
+    position:relative;
+
+}
+
+div.yuimenu li.checked em.checkedindicator {
+
+    height:8px;
+    width:8px;
+    text-indent:9px;
+    overflow:hidden;
+    background-image:url(map.gif);
+    background-position:0 -48px;
+    background-repeat:no-repeat;
+    position:absolute;
+    left:6px;
+    _left:-16px; /* Underscore hack b/c this is for IE 6 only */
+    top:.5em;
+
+}
+
+div.yuimenu li.checked em.checkedindicator.selected {
+
+    background-position:0 -56px;
+
+}
+
+div.yuimenu li.checked em.checkedindicator.disabled {
+
+    background-position:0 -64px;
+
+}
+
+/**********************************************************/
+/**logger.css*****/
+/**********************************************************/
+/* logger default styles */
+/* font size is controlled here: default 77% */
+#yui-log {position:absolute;top:1em;right:1em;font-size:77%;text-align:left;}
+/* width is controlled here: default 31em */
+.yui-log {padding:1em;width:31em;background-color:#AAA;border:1px solid black;font-family:monospace;z-index:9000;}
+.yui-log p {margin:1px;padding:.1em;}
+.yui-log button {font-family:monospace;}
+.yui-log .yui-log-hd {margin-top:1em;padding:.5em;background-color:#575757;color:#FFF;}
+/* height is controlled here: default 20em*/
+.yui-log .yui-log-bd {width:100%;height:20em;background-color:#FFF;border:1px solid gray;overflow:auto;}
+.yui-log .yui-log-ft {margin-top:.5em;margin-bottom:1em;}
+.yui-log .yui-log-ft .yui-log-categoryfilters {}
+.yui-log .yui-log-ft .yui-log-sourcefilters {width:100%;border-top:1px solid #575757;margin-top:.75em;padding-top:.75em;}
+.yui-log .yui-log-btns {position:relative;float:right;bottom:.25em;}
+.yui-log .yui-log-filtergrp {margin-right:.5em;}
+.yui-log .info {background-color:#A7CC25;} /* A7CC25 green */
+.yui-log .warn {background-color:#F58516;} /* F58516 orange */
+.yui-log .error {background-color:#E32F0B;} /* E32F0B red */
+.yui-log .time {background-color:#A6C9D7;} /* A6C9D7 blue */
+.yui-log .window {background-color:#F2E886;} /* F2E886 tan */
+
+/**********************************************************/
+/**container.css*****/
+/**********************************************************/
+
+.yui-tt{
+	visibility:hidden;
+	position:absolute;
+	color:#333;
+	background-color:#FEFFDD;
+	font-family:arial,helvetica,verdana,sans-serif;
+	padding:4px;
+	border-style:solid;
+	border-top-width: 1px;
+	border-left-width: 1px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-color: #CCCCCC;
+	font:80% sans-serif;
+	width:auto;
+	z-index:10003;
+}
+
+* html body.masked select {
+	visibility:hidden;
+}
+
+* html div.yui-panel-container select {
+	visibility:inherit;
+}
+
+* html div.drag select {
+	visibility:hidden;
+}
+
+* html div.hide-select select {
+	visibility:hidden;
+}
+
+.mask {
+    z-index:0;   
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    -moz-opacity: 0.5;
+    opacity:.50;
+    filter: alpha(opacity=50);
+    background-color:#CCC;
+}
+
+.hide-scrollbars * {
+	overflow:hidden;
+}
+
+.hide-scrollbars textarea, .hide-scrollbars select {
+	overflow:hidden;
+	display:none;
+}
+
+.show-scrollbars textarea, .show-scrollbars select {
+	overflow:visible;
+}
+
+.yui-panel-container {
+	position:absolute;
+	background-color:transparent;
+	z-index:6;
+	visibility:hidden;
+	overflow:visible;
+	width:auto;
+}
+
+.yui-panel-container.focused {
+}
+
+
+.yui-panel-container.matte {
+	padding:3px;
+	background-color:#FFF;
+}
+
+.yui-panel-container.matte .underlay {
+	display:none;
+}
+
+.yui-panel-container.shadow {
+	padding:0px;
+	background-color:transparent;
+}
+
+.yui-panel-container.shadow .underlay {
+	visibility:inherit;
+	position:absolute;
+	background-color:#CCC;
+	top:3px;left:3px;
+	z-index:0;
+	width:100%;
+	height:100%;
+    -moz-opacity: 0.7;
+    opacity:.70;
+    filter:alpha(opacity=70);
+	zoom:1;
+}
+
+.yui-panel {
+	visibility:hidden;
+	border-collapse:separate;
+	position:relative;
+	left:0px;top:0px;
+	font:1em Arial;
+	background-color:#FFF;
+	border:1px solid #000;
+	z-index:1;
+	overflow:hidden;
+}
+
+.yui-panel .hd {
+	background-color:#3d77cb;
+	color:#FFF;
+	font-size:100%;
+	line-height:100%;
+	border:1px solid #FFF;
+	border-bottom:1px solid #000;
+	font-weight:bold;
+	overflow:hidden;
+	padding:4px;
+}
+
+.yui-panel .bd {
+	overflow:hidden;
+	padding:4px;
+}
+
+.yui-panel .bd p {
+	margin:0 0 1em;
+}
+
+.yui-panel .container-close {
+	position:absolute;
+	top:5px;
+	right:4px;
+	z-index:6;
+	height:12px;
+	width:12px;
+	margin:0px;
+	padding:0px;
+	background:url(close12_1.gif) no-repeat;
+	cursor:pointer;
+	visibility:inherit;
+}
+
+.yui-panel .ft {
+	padding:4px;
+	overflow:hidden;
+}
+
+.yui-simple-dialog .bd .yui-icon {
+	background-repeat:no-repeat;
+	width:16px;
+	height:16px;
+	margin-right:10px;
+	float:left;
+}
+
+.yui-simple-dialog .bd span.blckicon {
+	background: url("blck16_1.gif") no-repeat;
+}
+
+.yui-simple-dialog .bd span.alrticon {
+	background: url("alrt16_1.gif") no-repeat;
+}
+
+.yui-simple-dialog .bd span.hlpicon {
+	background: url("hlp16_1.gif") no-repeat;
+}
+
+.yui-simple-dialog .bd span.infoicon {
+	background: url("info16_1.gif") no-repeat;
+}
+
+.yui-simple-dialog .bd span.warnicon {
+	background: url("warn16_1.gif") no-repeat;
+}
+
+.yui-simple-dialog .bd span.tipicon {
+	background: url("tip16_1.gif") no-repeat;
+}
+
+.yui-dialog .ft, .simple-dialog .ft {
+	padding-bottom:5px;
+	padding-right:5px;
+	text-align:right;
+}
+
+.yui-dialog form, .yui-simple-dialog form {
+	margin:0;
+}
+
+.button-group button {
+	font:100 76% verdana;
+	text-decoration:none;
+	background-color: #E4E4E4;
+	color: #333;
+	cursor: hand;
+	vertical-align: middle;
+	border: 2px solid #797979;
+	border-top-color:#FFF;
+	border-left-color:#FFF;
+	margin:2px;
+	padding:2px;
+}
+
+.button-group button.default {
+	font-weight:bold;
+}
+
+.button-group button:hover, .button-group button.hover {
+	border:2px solid #90A029;
+	background-color:#EBF09E;
+	border-top-color:#FFF;
+	border-left-color:#FFF;
+}
+
+.button-group button:active {
+	border:2px solid #E4E4E4;
+	background-color:#BBB;
+	border-top-color:#333;
+	border-left-color:#333;
+}
+
+/**********************************************************/
+/**calendar.css*****/
+/**********************************************************/
+.yui-calcontainer {
+	position:relative;
+	padding:5px;
+	background-color:#FFF;
+	 border:1px solid #ddd;
+	float:left;
+	overflow:hidden;
+}
+
+.yui-calcontainer iframe {
+	position:absolute;
+	border:none;
+	margin:0;padding:0;
+	left:-1px;
+	top:-1px;
+	z-index:0;
+	width:50em;
+	height:50em;
+	color: #fff;
+}
+
+.yui-calcontainer.multi {
+	padding:0;
+}
+
+.yui-calcontainer.multi .groupcal {
+	padding:5px;
+	background-color:transparent;
+	z-index:1;
+	float:left;
+	position:relative;
+	border:none;
+}
+
+.yui-calcontainer .title {
+	font:100% sans-serif;
+	color:#000;
+	font-weight:bold;
+	margin-bottom:5px;
+	height:25px;
+	position:absolute;
+	top:3px;left:5px;
+	z-index:1;
+}
+
+.yui-calcontainer .close-icon {
+	position:absolute;
+	right:3px;
+	top:3px;
+	border:none;
+	z-index:1;
+}
+
+/* Calendar element styles */
+
+.yui-calendar {
+	font:90% sans-serif;
+	text-align:center;
+	border-spacing:0;
+	border-collapse:separate;
+	position:relative;
+}
+
+.yui-calcontainer.withtitle {
+	padding-top:1.5em;
+}
+
+.yui-calendar .calnavleft {
+	position:absolute;
+	background-repeat:no-repeat;
+	cursor:pointer;
+	/* top:2px; */
+	bottom:0;
+	width:18px;
+	height:18px;   
+	left:2px;
+	z-index:1;
+}
+
+.yui-calendar .calnavright {
+	position:absolute;
+	background-repeat:no-repeat;
+	cursor:pointer;
+/*	top:2px; */
+	bottom:0;
+	width:18px;
+	height:18px;  
+	right:2px;
+	z-index:1;
+}
+
+.yui-calendar td.calcell {
+	padding:.3em .4em;
+	border:1px solid #FFFFFF;
+	text-align:center;
+}
+
+.yui-calendar td.calcell a {
+	color:#3c3c3c;
+	text-decoration:none;
+}
+
+.yui-calendar td.calcell.today {
+	color:#FFF;
+	background-color:#818181;
+	border:1px solid #818181;
+}
+
+.yui-calendar td.calcell.oom {
+	cursor:default;
+	color:#fff;
+	background-color:#fff;
+	border:1px solid #fff;
+}
+
+.yui-calendar td.calcell.selected {
+	color:#fff;
+	background-color:#009DFF;
+	border:1px solid #009DFF;
+}
+
+.yui-calendar td.calcell.calcellhover {
+	cursor:pointer;
+	color:#FFF;
+	background-color:#AADEFF;
+	border:1px solid #AADEFF;
+}
+
+.yui-calendar td.calcell.calcellhover a {
+	color:#FFF;
+}
+
+.yui-calendar td.calcell.restricted {
+	text-decoration:line-through;
+}
+
+.yui-calendar td.calcell.previous {
+	color:#CCC;
+}
+
+.yui-calendar td.calcell.highlight1 { background-color:#CCFF99; }
+.yui-calendar td.calcell.highlight2 { background-color:#99CCFF; }
+.yui-calendar td.calcell.highlight3 { background-color:#FFCCCC; }
+.yui-calendar td.calcell.highlight4 { background-color:#CCFF99; }
+
+.yui-calendar .calhead {
+	border-bottom:1px solid #E0E0E0;
+	padding-bottom:4px;
+	padding-top:2px;
+	vertical-align:middle;
+	background-color:#FFF;
+}
+
+.yui-calendar .calheader {
+	position:relative;
+	width:100%;
+	text-align:center;
+}
+
+.yui-calendar .calheader img {
+	border:none;
+}
+
+.yui-calendar .calweekdaycell {
+	color:#333;
+	font-weight:bold;
+	text-align:center;
+	width:1.5em;
+	padding-top:4px;
+	padding-bottom:4px;
+
+}
+
+.yui-calendar .calfoot {
+	background-color:#EEE;
+}
+
+.yui-calendar .calrowhead, .yui-calendar .calrowfoot {
+	color:#666;
+	font-size:9px;
+	font-style:italic;
+	font-weight:normal;
+	width:15px;
+}
+
+.yui-calendar .calrowhead {
+	border-right-width:2px;
+}
+
+/*Specific changes for calendar running under fonts/reset */
+.yui-calendar a:hover {background:inherit;}
+p#clear {clear:left; padding-top:10px;}
+
+/**********************************************************/
+/**reset-min.css*****/
+/**********************************************************/
+/* Copyright (c) 2006, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.net/yui/license.txt version: 0.12.0 */ body{margin:0;padding:0;}
+/**********************************************************/

@@ -1,0 +1,138 @@
+textarea {
+    height: 100px;
+    width: 300px;
+}
+
+.ytextinput {
+    width: 300px;
+}
+.ycontrol {
+    /*
+    *width: 15px;
+    *height: 15px;*/
+}
+.yui_select {
+    position: relative;
+    width: 10em;
+    cursor: pointer;
+    cursor: hand;
+}
+.yui_select a {
+    border: 1px solid #ccc;
+    padding: .25em 15px .25em .25em;
+    display: block;
+    text-align: left;
+    background-image: url(./graphics/downarrow.gif);
+    background-position: center right;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    color: #000;
+}
+.yui_selectlist {
+    width: 10em;
+    position: absolute;
+}
+.yui_selectlist ul {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    cursor: pointer;
+    cursor: hand;
+}
+.yui_selectlist ul li {
+    padding: 0;
+    margin: 0;
+}
+.yui_selectlist ul li a {
+    background-image: none;
+    border: 1px solid #fff;
+    padding: .25em 15px .25em .25em;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    color: #000;
+}
+.yui_selectlist ul li.selected a {
+    background-image: none;
+    border: 1px solid #ccc;
+    background-color: #BFDFFF;
+}
+.yui_selectlist ul li a:hover {
+    border: 1px solid #ccc;
+    background-color: #BFDFFF;
+}
+
+.yui_textinput {
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: .25em;
+    position: absolute;
+}
+
+.yui_checkbox {
+    background-image: url( graphics/unchecked_box.gif);
+    background-repeat: no-repeat;
+    background-color: white;
+    position: absolute;
+    padding: 1px;
+    height: 16px;
+    width: 16px;
+}
+
+.yui_radiobutton {
+    background-image: url( graphics/unchecked_radio.gif);
+    background-repeat: no-repeat;
+    background-color: white;
+    position: absolute;
+    padding: 1px;
+    height: 16px;
+    width: 16px;
+}
+
+.yui_checkbox_checked {
+    background-image: url( graphics/checked_box.gif );
+    background-repeat: no-repeat;
+}
+
+.yui_radiobutton_checked {
+    background-image: url( graphics/checked_radio.gif );
+    background-repeat: no-repeat;
+}
+.yui_error {
+    background-color: #F4FFAD;
+    border: 1px solid #ea3307;
+}
+
+
+/*
+.yui_checkbox {
+    border: 1px solid #ccc;
+    background-color: white;
+    position: absolute;
+    padding: 1px;
+    height: 10px;
+    width: 10px;
+}
+
+.yui_checkbox_checked {
+    background-image: url( graphics/checkbox.gif );
+    background-repeat: no-repeat;
+}
+
+.yui_radiobutton_checked {
+    background-image: url( graphics/checkbox.gif );
+    background-repeat: no-repeat;
+}
+
+.yui_radiobutton {
+    border: 1px solid #ccc;
+    background-color: white;
+    position: absolute;
+    padding: 1px;
+    height: 10px;
+    width: 10px;
+}
+*/

@@ -1,0 +1,20 @@
+/*margin and padding on body element
+  can introduce errors in determining
+  element position and are not recommended;
+  we turn them off as a foundation for YUI
+  CSS treatments. */
+body {
+	margin:0;
+	padding:0;
+}
+#toggle {
+	text-align: center;
+	padding: 1em;
+}
+#toggle a {
+	padding: 0 5px;
+	border-left: 1px solid black;
+}
+#tRight {
+	border-left: none !important;
+}

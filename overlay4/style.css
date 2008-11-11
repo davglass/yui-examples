@@ -1,0 +1,24 @@
+#cover {
+    width: 450px;
+    height: 250px;
+    margin: 15em;
+    border: 1px solid black;
+}
+
+#dlg {
+    width: 250px;
+    position: absolute;
+}
+#dlg .hd {
+    background-color:#3d77cb;
+	color:#FFF;
+	font-size:100%;
+	line-height:100%;
+	border:1px solid #FFF;
+	border-bottom:1px solid #000;
+	font-weight:bold;
+	overflow:hidden;
+	padding:4px;
+    font-family: Verdana;
+}
+

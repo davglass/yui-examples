@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>ISDC Training - Planner Tool</title>
+
+	<!-- Our own style sheets. Attention: Can be overriden by Yahoo's sheets (below). We don't want to mess with their scripts, thats why.-->
+	<link rel="stylesheet" type="text/css" href="include/nomargin.css" />
+	
+	<!-- Yahoo! UI ---------------------------------------------------------------- -->
+	<!-- We use the Y!UI framework for fancy and easy UI stuff. This is their code: -->
+	<!-- -------------------------------------------------------------------------- -->
+	<!-- Skin CSS file -->
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.1/build/assets/skins/sam/layout.css">
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.1/build/assets/skins/sam/resize.css">
+	<!-- Utility Dependencies -->
+	<script src="http://yui.yahooapis.com/2.5.1/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+	<script src="http://yui.yahooapis.com/2.5.1/build/dragdrop/dragdrop-min.js"></script> 
+	<script src="http://yui.yahooapis.com/2.5.1/build/element/element-beta-min.js"></script> 
+	<!-- Optional Animation -->
+	<script src="http://yui.yahooapis.com/2.5.1/build/animation/animation-min.js"></script> 
+	<!-- Source file for the Resize Utility -->
+	<script src="http://yui.yahooapis.com/2.5.1/build/resize/resize-beta-min.js"></script>
+	<!-- Source file for the Layout Manager -->
+	<script src="http://yui.yahooapis.com/2.5.1/build/layout/layout-beta-min.js"></script>
+</head>
+
+<body class=" yui-skin-sam">
+	<!-- Each page will be formed by a menu pane and an action pane. -->
+	<div id="skeleton">
+			<div id="right_pane">righty...</div>
+			<div id="left_pane">lefty...</div>
+			<div id="bottom_pane">bottomy...</div>
+			<div id="center_pane">centerish...</div>
+	</div>
+
+	<script type="text/javascript">
+	(function() {
+	    var Dom = YAHOO.util.Dom,
+	        Event = YAHOO.util.Event;
+
+	    Event.onDOMReady(function() {
+	        var layout = new YAHOO.widget.Layout('skeleton', {
+				height: 700,
+				width: 700,
+	            units: [
+	                {
+	                    position: 'right',
+	                    header: 'Right',
+	                    width: 200,
+	                    resize: true, 
+	                    gutter: '5px', 
+	                    footer: 'Footer', 
+	                    collapse: true, 
+	                    scroll: true,
+						body: right_pane,
+						animate: false
+	                },
+	                {
+	                    position: 'bottom', 
+	                    header: 'Bottom', 
+	                    height: 100, 
+	                    resize: false, 
+	                    gutter: '5px', 
+	                    collapse: false,
+						body: bottom_pane
+	                },
+	                {
+	                    position: 'left',
+	                    header: 'Left',
+	                    width: 200,
+	                    resize: false,
+	                    gutter: '5px',
+	                    collapse: true,
+	                    close: false,
+	                    collapseSize: 50,
+	                    scroll: true,
+						body: left_pane,
+						animate: false
+	                },
+	                {
+	                    position: 'center',
+						body: center_pane
+	                }
+	            ]
+	        });
+	        layout.render();
+	    });
+	})();
+	</script>
+</body>
+</html>

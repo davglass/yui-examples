@@ -1,0 +1,70 @@
+#tabs {
+    width: 500px;
+    margin: 2em;
+}
+
+#tabs .yui-content {
+    border:1px solid #ccc;
+    border-top: none;
+    padding: 0 1em;
+    _overflow: hidden;
+    color: #999;
+}
+
+#tabs .yui-content div {
+    _height: 10em;
+    width: 100%;
+}
+
+#tabs h3 {
+    border-bottom: 1px dashed #ccc;
+    padding: .25em;
+    margin-bottom: .25em;
+    font-weight: bold;
+    color: #18397C;
+}
+
+#tabs li {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+#tabs li.selected {
+    font-weight: bold;
+}
+
+#tabs li a {
+    background: transparent url(tabs_back.gif) repeat scroll 0 -22pt;
+    text-decoration: none;
+    color: #18397C;
+    padding: 3px;
+    display: block;
+    border: 1px solid #ccc;
+    font-size: 80%;
+}
+
+#tabs li.selected a {
+    background: transparent url(tabs_back.gif) repeat scroll 0pt -133pt;
+    color: #CC6633;
+}
+
+#tabs li a:hover {
+    text-decoration: underline;
+    color: #18397C;
+}
+
+#tabs em {
+    padding: .25em;
+}
+
+#tabs li div {
+    overflow: hidden;
+    color: #999;
+    width: 467px;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    font-weight: normal;
+    padding: 0 1em;
+    font-size: 100%;
+}

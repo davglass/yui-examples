@@ -1,0 +1,57 @@
+button {
+	font:100 76% verdana;
+	text-decoration:none;
+	background-color: #E4E4E4;
+	color: #333;
+	cursor: hand;
+	vertical-align: middle;
+	border: 2px solid #797979;
+	border-top-color:#FFF;
+	border-left-color:#FFF;
+	margin:2px;
+	padding:2px;
+}
+
+button.default {
+	font-weight:bold;
+}
+
+button:hover, button.hover { 
+	border:2px solid #90A029;
+	background-color:#EBF09E;
+	border-top-color:#FFF;
+	border-left-color:#FFF;
+}
+
+button:active { 
+	border:2px solid #E4E4E4;
+	background-color:#BBB;
+	border-top-color:#333;
+	border-left-color:#333;
+}
+
+
+#dlgFrame {
+    border: 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+    height: 450px;
+    width: 100%;
+}
+
+#dlg {
+    width: 450px;
+}
+#dlg .hd {
+    background-color:#3d77cb;
+	color:#FFF;
+	font-size:100%;
+	line-height:100%;
+	border:1px solid #FFF;
+	border-bottom:1px solid #000;
+	font-weight:bold;
+	overflow:hidden;
+	padding:4px;
+    font-family: Verdana;
+}
+

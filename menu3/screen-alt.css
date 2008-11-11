@@ -1,0 +1,96 @@
+/* For use only in non-G9 countries that have shared templates. */
+
+body {text-align:left; background:#FFF;}
+#ibm-top {
+	background:#FFF
+		url("//www.ibm.com/i/c.gif")
+		repeat-y 50% 0px;
+	margin:0px;
+	padding:0px;
+	width:760px;
+	text-align:left;
+}
+*:first-child+html #ibm-top #ibm-masthead {width:760px;}
+* html #ibm-masthead {width /**/:760px;}
+#v14-body-table {margin:0px !important;}
+
+/* masthead styles begin ================================================= */
+#ibm-masthead {
+	background:#000;
+	clear:both;
+	color:#FFF;
+	margin:0px;
+}
+#ibm-universal-nav {
+	background:#BCCDDB
+		url("//www.ibm.com/i/c.gif");
+}
+#ibm-universal-nav ul {
+	margin:0px;
+	padding:0px;
+	height:1%;
+}
+#ibm-universal-nav li {
+	float:left;
+	overflow:inherit;
+	padding:0px 11px 0px 12px;
+	white-space:nowrap;
+}
+#ibm-universal-nav li a {
+	white-space:nowrap;
+	display:block;
+	padding: 4px 0px;
+}
+li#ibm-phone {
+	background:transparent 
+		none !important;
+	color:#293D6B;
+	float:right;
+	padding-top:4px;
+	padding-bottom:4px;
+}
+#ibm-universal-nav li:hover {background:none;}
+li#ibm-unav-home a {padding-left:5px;}
+#ibm-universal-nav li a:link,
+#ibm-universal-nav li a:visited,
+#ibm-navigation li a:link,
+#ibm-navigation li a:visited {color:#293D6B;}
+#ibm-universal-nav li a:hover {text-decoration:underline;}
+#ibm-masthead a:link,
+#ibm-masthead a:visited {text-decoration:none;}
+#ibm-footer li a:link, #ibm-footer a:visited {color:#FFF;text-decoration:none;}
+#ibm-footer li a:hover {color:#FFF;text-decoration:underline;}
+#ibm-masthead a:hover,
+#ibm-navigation a:hover {text-decoration:underline;}
+#ibm-welcome-links {color:#98b1c4;}
+/* masthead styles end =================================================== */
+
+
+
+/* footer styles begin ============================================== */
+#ibm-page-tools ul a:link,
+#ibm-page-tools ul a:visited {text-decoration:none;}
+#ibm-page-tools ul a:hover {text-decoration:underline;}
+
+#ibm-footer {
+	background:#000
+		url("//www.ibm.com/i/v16/t/template-gradient.gif")
+		repeat-x 0% 50%;
+	clear:both;
+	color:#CCC;
+	margin:0px;
+	padding-top:1px;
+	height:1%;
+}
+#ibm-footer li.ibm-first {
+	background-image:none;
+	padding-left:11px;
+}
+* html #ibm-page-tools,
+* html #ibm-footer {
+	height:1%;
+	width /**/:760px;
+}
+
+
+/* footer styles end ================================================ */

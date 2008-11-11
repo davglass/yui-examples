@@ -1,0 +1,203 @@
+/* CSS Document */
+body {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color: #8CA8CF;  /*7697C3*/
+	background-image: url(/templates/cmsIT/skins/default/images/frame/background.gif);
+	background-repeat: repeat-x; 
+	height: 100%;
+	width: 100%;
+}
+
+form {
+	margin: 0px 0px 0px 0px;
+}
+
+input {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+select {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+img {
+	border: none;
+}
+
+a {
+	color: #000033;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #990000;
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 16px; 
+	color: #000033;
+	font-weight: bold;
+}
+
+
+
+
+
+/* Container Controls */
+#full_screen_container {
+	width: 100%;
+	text-align: center; /* older IE fix for center align */
+}
+
+#content_container {
+	margin: 0px auto;
+	text-align: left; /* older IE fix for center align */
+	width: 780px;
+}
+
+#header {
+	width: 100%;
+}
+
+#header_top {
+	width: 100%;
+	height: 20px;
+	background-image: url(/templates/cmsIT/skins/default/images/frame/main1.gif);
+	background-repeat: no-repeat;
+}
+
+#header_bottom {
+	width: 778px;
+	height: 205px;
+	background-image: url(/templates/cmsIT/skins/default/images/frame/top_sidebars.gif);
+	background-repeat: no-repeat;
+}
+
+#header_logo_background {
+	width: 759px;
+	height: 146px;
+	background: url(/templates/cmsIT/skins/default/images/frame/main2.jpg);
+	background-repeat: no-repeat;
+	margin-left: 9px;
+}
+
+#header_menu {
+	width: 759px;
+	height: 30px;
+	background: url(/templates/cmsIT/skins/default/images/frame/navbar.jpg);
+	background-repeat: no-repeat;
+	margin-left: 9px;
+}
+
+#header_menu_content {
+	width: 719px;
+	margin-top: 7px;
+	margin-left: 15px;
+}
+
+#header_end {
+	width: 759px;
+	height: 29px;
+	background: url(/templates/cmsIT/skins/default/images/frame/main_top.jpg);
+	background-repeat: no-repeat;
+	margin-left: 9px;
+}
+
+#company_title {
+	width:300px;
+	position:relative;
+	bottom:56px;
+	left:56px;
+	font-size: 25px;
+	color: #000033;
+	font-weight: bold;
+}
+
+#company_slogan {
+	width:300px;
+	position:relative;
+	bottom:56px;
+	left:56px;
+	font-size: 14px;
+	color: #000033;
+	font-weight: bold;
+}
+
+#company_logo {
+	width:300px;
+	height:50px;
+	margin-left: 20px;
+}
+
+#main_content {
+	width: 100%;
+}
+
+#main_content_left {
+	background-image: url(/templates/cmsIT/skins/default/images/frame/main_left_spacer.gif); 
+	background-repeat: repeat-y; 
+	width: 9px;
+	vertical-align: top;
+}
+
+#main_content_left_margin {
+	background-color:#FFFFFF; 
+	width: 20px;
+}
+
+#main_content_right {
+	background-image: url(/templates/cmsIT/skins/default/images/frame/main_right_spacer.gif);
+	background-repeat: repeat-y; 
+	width: 10px;
+	vertical-align: top;
+}
+
+#main_content_right_margin {
+	background-color:#FFFFFF; 
+	width: 20px;
+}
+
+#main_content_middle {
+	background-color:#FFFFFF; 
+	width: 731px;
+	vertical-align: top;
+}
+
+#footer {
+	width: 100%;
+	height: 43px;
+	background-image: url(/templates/cmsIT/skins/default/images/frame/footer.gif);
+	background-repeat: no-repeat;
+}
+
+#footer_content {
+	color: #000033;
+	text-align:center;
+	padding-top:8px;
+}
+
+#contact {
+	padding-top: 2px;
+	margin-left: 605px;
+}
+
+#error_message {
+	color: #FF0000;
+	padding: 4px 4px 4px 4px;
+	margin: 0px 0px 10px 0px;
+	border: 1px dashed #FF0000;
+}
+
+#confirmation_message {
+	color: #006633;
+	padding: 4px 4px 4px 4px;
+	margin: 0px 0px 10px 0px;
+	border: 1px dashed #006633;
+}
+/* Container Controls */

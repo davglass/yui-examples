@@ -1,0 +1,149 @@
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tr><td>&nbsp;</td></tr>
+		<tr><td>	
+			<table border="0" cellpadding="0" cellspacing="0">
+			#foreach( $L_line in $GLOBAL_buttons)
+			#set($foo=$vc%2)
+			#if($foo==0)<tr> #end
+			<td>
+			   ###<a href="$!L_line.get('link')">$L_line.get('displayText')</a><img src="//www.ibm.com/i/c.gif" width="20" height="1" alt="" />
+
+				<div id="divnifastpathcatalog$vc" class='yuimenubar'>            
+			          <div class='bd'>
+			                 <ul class='first-of-type'>
+			
+							#BHC_contextualMenuInnerNI_HP($L_line)##				
+			
+			          </ul>
+			       </div>
+				</div>        
+			   
+			</td>
+			#if($foo==1) </tr> #end
+			#end
+
+
+			#set( $buttonSize = 0 )
+			#foreach( $L_line in $GLOBAL_buttons)##
+			#set( $buttonSize = $buttonSize + 1 ) 
+			#end
+
+			#set($foo=$buttonSize%2)
+			#if($foo==1)<td></td></tr>#end
+
+			</table>
+
+
+
+
+
+
+## for fast path menu on NI homepage
+#macro (BHC_contextualMenuInnerNI_HP $L_line)
+
+	#if($L_line.get('action').equals('addproduct'))##
+            <li class='yuimenubaritem first-of-type'>
+  	            	<a href='$L_line.get('link')' class='smallplainlink progressIndicatorOnClick'>$L_line.get('displayText')</a>
+	
+	                <div id='$!GLOBAL_contextId$L_line.get('displayText')' class='yuimenu'>
+	                    <div class='bd'>
+	
+	                       <ul>
+	
+								$CTL_CatalogTreeLoopThroughTool.execute($L_line)										
+										
+	                        </ul>
+	
+	                    </div>
+	                </div>
+            </li>
+	#else
+        <li class='yuimenubaritem first-of-type'>
+	      	#if( $L_line.get('action').equals('copy') || $L_line.get('action').equals('delete') || $L_line.get('action').equals('move'))
+				<a id="copyDeleteHref$L_line.get('action')__$!GLOBAL_contextId" name='$L_line.get('action')' class="smallplainlink productsAction hrefOverwriteAction" href="$L_line.get('link')">$L_line.get('displayText')</a>&nbsp;&nbsp;<span class="smgraytext">|&nbsp;&nbsp;</span>
+			#else
+	        	<a href='$L_line.get('link')' class='smallplainlink progressIndicatorOnClick'>$L_line.get('displayText')</a>
+	        #end
+        </li>
+        
+	#end ### end if
+
+#end
+
+
+
+
+
+
+### MENU YAHOO LIBRARY
+				
+### Level1				
+#macro (BHC_Level1_CatalogTreeNode_Begin)
+  
+	#if( $CatalogTreeNode.getType().equals('DEEPEST_LEVEL_CATALOG'))
+	    <li class='yuimenuitem'><a href="$CatalogTreeNode.getButton().get('link')" class="smallplainlink progressIndicatorOnClick"> $CatalogTreeNode.getButton().get('displayText')</a>
+	#else
+        <li class="yuimenuitem"><a href="$CatalogTreeNode.getButton().get('link')" class="smallplainlink progressIndicatorOnClick"> $CatalogTreeNode.getButton().get('displayText')</a>
+            <div class="yuimenu">
+               <div class="bd">
+                   <ul class="first-of-type">
+	                   #set($finishOuterLevel1="true")
+	#end
+
+  
+#end
+
+
+#macro (BHC_Level1_CatalogTreeNode_End)
+	#if( $CatalogTreeNode.getType().equals('DEEPEST_LEVEL_CATALOG'))	
+		</li>
+	#else
+                    </ul>
+                </div>
+            </div>
+        </li>
+	#end
+#end
+
+
+#macro (BHC_Level1_CatalogTreeNode_Closure)
+		&nbsp;
+#end
+
+
+
+
+### Level 2
+#macro (BHC_Level2_CatalogTreeNode_Begin)
+	#if( $CatalogTreeNode.getType().equals('DEEPEST_LEVEL_CATALOG'))
+	    <li class='yuimenuitem'><a href="$CatalogTreeNode.getButton().get('link')" class="smallplainlink progressIndicatorOnClick"> $CatalogTreeNode.getButton().get('displayText')</a>
+	#else
+        <li class="yuimenuitem"><a href="$CatalogTreeNode.getButton().get('link')" class="smallplainlink progressIndicatorOnClick"> $CatalogTreeNode.getButton().get('displayText')</a>
+            <div class="yuimenu">
+               <div class="bd">
+                   <ul class="first-of-type">
+	                   #set($finishOuterLevel2="true")
+	#end
+  
+#end
+
+
+
+
+#macro (BHC_Level2_CatalogTreeNode_End)
+	#if( $CatalogTreeNode.getType().equals('DEEPEST_LEVEL_CATALOG'))	
+		</li>
+	#else
+                    </ul>
+                </div>
+            </div>
+        </li>
+	#end
+#end
+
+
+#macro (BHC_Level2_CatalogTreeNode_Closure)
+		&nbsp;
+#end
+
+

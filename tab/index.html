@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>YUI: Tab Handler</title>
+</head>
+<body>
+<form id="test">
+    <input type="text" name="text1" id="text1" value="" autocomplete="off" maxlength="7" /><br/>
+    <input type="text" name="text2" id="text2" value="" autocomplete="off" maxlength="7"  /><br/>
+    <input type="text" name="text3" id="text3" value="" autocomplete="off" maxlength="7" /><br/>
+</form>
+<script type="text/javascript" src="../js/yahoo-min.js"></script>
+<script type="text/javascript" src="../js/dom-min.js"></script>
+<script type="text/javascript" src="../js/event-min.js"></script>
+<script type="text/javascript">
+    var _text1 = YAHOO.util.Dom.get('text1');
+    var _text2 = YAHOO.util.Dom.get('text2');
+    var _text3 = YAHOO.util.Dom.get('text3');
+    
+    var _flds = [_text1, _text2, _text3];
+    
+    YAHOO.util.Event.addListener(_flds, 'keydown', checkKeys);
+    function checkKeys(ev) {
+        var _tar = YAHOO.util.Event.getTarget(ev);
+        var _val = _tar.value;
+        var _len = _tar.value.length;
+        var _nextFld = false;
+        var _lastFld = false;
+        if ((_len == 7) && (ev.keyCode != 8)) {
+            for (i = 0; i < _flds.length; i++) {
+                if (_flds[i] == _tar) {
+                    if (_flds[i + 1]) {
+                        _nextFld = _flds[i + 1];
+                    }
+                    break;
+                }
+            }
+            if (typeof _nextFld == 'object') {
+                _nextFld.focus();
+            }
+        }
+        if ((_len == 0) && (ev.keyCode == 8)) {
+            for (i = 0; i < _flds.length; i++) {
+                if (_flds[i] == _tar) {
+                    if (_flds[i - 1]) {
+                        _lastFld = _flds[i - 1];
+                    }
+                    break;
+                }
+            }
+            if (typeof _lastFld == 'object') {
+                _lastFld.focus();
+            }
+        }
+    }
+</script>
+</body>
+</html>
