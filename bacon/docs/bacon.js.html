@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:yui="http://yuilibrary.com/rdf/1.0/yui.rdf#">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>API: bacon   bacon.js  (YUI Library)</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/reset-fonts-grids-min.css?stamp=1223916184.81" />
+	<link rel="stylesheet" type="text/css" href="assets/api.css?stamp=1223916184.81" />
+
+    <script type="text/javascript" src="assets/api-js?stamp=1223916184.81"></script>
+    <script type="text/javascript" src="assets/ac-js?stamp=1223916184.81"></script>
+</head>
+
+<body id="yahoo-com">
+
+<div id="doc3" class="yui-t2">
+	<div id="hd">
+        <h1><a href="http://developer.yahoo.com/yui/" title="Yahoo! UI Library">Yahoo! UI Library</a></h1>
+        <h3>bacon&nbsp; <span class="subtitle"></span></h3>
+        <a href="./index.html" title="Yahoo! UI Library">Yahoo! UI Library</a> 
+            &gt; <a href="./module_bacon.html" title="bacon">bacon</a>
+                
+                 &gt; bacon.js (source view) 
+        <form onsubmit="return false">
+            <div id="propertysearch">
+                Search: <input autocomplete="off" id="searchinput" />
+                <div id="searchresults">
+                    &nbsp;
+                </div>
+            </div>
+        </form>
+	</div>
+
+	<div id="bd">
+		<div id="yui-main">
+			<div class="yui-b">
+            <form action="#" name="yui-classopts-form" method="get" id="yui-classopts-form">
+                <fieldset>
+                    <legend>Filters</legend>
+                <span class="classopts"><input type="checkbox" name="show_private" id="show_private" /> <label for="show_private">Show Private</label></span>
+                <span class="classopts"><input type="checkbox" name="show_protected" id="show_protected" /> <label for="show_protected">Show Protected</label></span>
+                <span class="classopts"><input type="checkbox" name="show_deprecated" id="show_deprecated" /> <label for="show_deprecated">Show Deprecated</label></span>
+                </fieldset>
+            </form>
+
+                    <div id="srcout">
+                        <style>
+                            #doc3 .classopts { display:none; }
+                        </style>
+<div class="highlight"><pre><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">Dom</span> <span class="o">=</span> <span class="nx">YAHOO</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">Dom</span><span class="o">,</span>
+    <span class="nx">Event</span> <span class="o">=</span> <span class="nx">YAHOO</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">Event</span><span class="o">;</span>
+    
+    <span class="c">/**</span>
+<span class="c">    * The Bacon Utility allows you to cook bacon on any HTML element.</span>
+<span class="c">    * @module bacon</span>
+<span class="c">    */</span>     
+    <span class="c">/**</span>
+<span class="c">    * This class provides the ability to cook bacon.</span>
+<span class="c">    * @class Bacon</span>
+<span class="c">    * @extends Element</span>
+<span class="c">    * @constructor</span>
+<span class="c">    */</span>
+    <span class="kd">var</span> <span class="nx">Bacon</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="o">,</span> <span class="nx">attrs</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">attrs</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">attrs</span> <span class="o">=</span> <span class="p">{};</span>
+        <span class="p">}</span>
+        <span class="nx">Bacon</span><span class="p">.</span><span class="nx">superclass</span><span class="p">.</span><span class="nx">constructor</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="o">,</span> <span class="nx">el</span><span class="o">,</span> <span class="nx">attrs</span><span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="kd">var</span> <span class="nx">proto</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="c">/**</span>
+<span class="c">        * @method cook</span>
+<span class="c">        * @description An override method for extending this class to maybe fry eggs too.</span>
+<span class="c">        */</span>
+        <span class="nx">cook</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{}</span><span class="o">,</span>
+        <span class="c">/**</span>
+<span class="c">        * @method fryBacon</span>
+<span class="c">        * @description Start frying the bacon</span>
+<span class="c">        */</span>
+        <span class="nx">fryBacon</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">Dom</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;element&#39;</span><span class="p">)</span><span class="o">,</span> <span class="s1">&#39;show-bacon&#39;</span><span class="p">);</span>
+            <span class="nx">soundManager</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="s1">&#39;bacon&#39;</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">fireEvent</span><span class="p">(</span><span class="s1">&#39;baconStart&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="o">,</span>
+        <span class="c">/**</span>
+<span class="c">        * @method stopFryBacon</span>
+<span class="c">        * @description Stop frying the bacon, it&#39;s done already</span>
+<span class="c">        */</span>
+        <span class="nx">stopFryBacon</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">Dom</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;element&#39;</span><span class="p">)</span><span class="o">,</span> <span class="s1">&#39;show-bacon&#39;</span><span class="p">);</span>
+            <span class="nx">soundManager</span><span class="p">.</span><span class="nx">pause</span><span class="p">(</span><span class="s1">&#39;bacon&#39;</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">fireEvent</span><span class="p">(</span><span class="s1">&#39;baconDone&#39;</span><span class="p">);</span>
+        <span class="p">}</span><span class="o">,</span>
+        <span class="c">/**</span>
+<span class="c">        * @private</span>
+<span class="c">        * @method _over</span>
+<span class="c">        * @description Called on mouseover to start cooking the bacon</span>
+<span class="c">        */</span>
+        <span class="nx">_over</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">fryBacon</span><span class="p">();</span>
+        <span class="p">}</span><span class="o">,</span>
+        <span class="c">/**</span>
+<span class="c">        * @private</span>
+<span class="c">        * @method _out</span>
+<span class="c">        * @description Called on mouseout to stop cooking the bacon</span>
+<span class="c">        */</span>
+        <span class="nx">_out</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">stopFryBacon</span><span class="p">();</span>
+        <span class="p">}</span><span class="o">,</span>
+        <span class="c">/**</span>
+<span class="c">        * @private</span>
+<span class="c">        * @method init</span>
+<span class="c">        * @description Standard Element Init method.</span>
+<span class="c">        */</span>
+        <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">Bacon</span><span class="p">.</span><span class="nx">superclass</span><span class="p">.</span><span class="nx">init</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="o">,</span> <span class="nx">arguments</span><span class="p">);</span>
+
+            <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;element&#39;</span><span class="p">)</span><span class="o">,</span> <span class="s1">&#39;mouseover&#39;</span><span class="o">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">_over</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="kc">true</span><span class="p">);</span>
+            <span class="nx">Event</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;element&#39;</span><span class="p">)</span><span class="o">,</span> <span class="s1">&#39;mouseout&#39;</span><span class="o">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">_out</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="kc">true</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">fireEvent</span><span class="p">(</span><span class="s1">&#39;baconReady&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c">/**</span>
+<span class="c">    * @event baconReady</span>
+<span class="c">    * @description Event fired when the bacon is ready for cooking.</span>
+<span class="c">    * @param {Event} ev The event.</span>
+<span class="c">    */</span>
+    <span class="c">/**</span>
+<span class="c">    * @event baconStart</span>
+<span class="c">    * @description The event letting you know that the bacon is cooking</span>
+<span class="c">    * @param {Event} ev The event.</span>
+<span class="c">    */</span>
+    <span class="c">/**</span>
+<span class="c">    * @event baconDone</span>
+<span class="c">    * @description The event letting you know that the bacon is done cooking</span>
+<span class="c">    * @param {Event} ev The event.</span>
+<span class="c">    */</span>
+
+
+    <span class="nx">YAHOO</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">Bacon</span><span class="o">,</span> <span class="nx">YAHOO</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">Element</span><span class="o">,</span> <span class="nx">proto</span><span class="p">);</span>
+    
+    <span class="c">/*</span>
+<span class="c">    * Load the SoundManger plugin and prep the sound file.</span>
+<span class="c">    */</span>
+    <span class="nx">soundManager</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;./&#39;</span><span class="o">;</span>
+    <span class="nx">soundManager</span><span class="p">.</span><span class="nx">debugMode</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="nx">soundManager</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">soundManager</span><span class="p">.</span><span class="nx">createSound</span><span class="p">(</span><span class="s1">&#39;bacon&#39;</span><span class="o">,</span><span class="s1">&#39;./bacon.mp3&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c">//Make us global</span>
+    <span class="nx">YAHOO</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">Bacon</span> <span class="o">=</span> <span class="nx">Bacon</span><span class="o">;</span>
+    <span class="nx">YAHOO</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="s1">&#39;bacon&#39;</span><span class="o">,</span> <span class="nx">YAHOO</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">Bacon</span><span class="o">,</span> <span class="p">{</span> <span class="nx">version</span><span class="o">:</span> <span class="s1">&#39;1.0&#39;</span><span class="o">,</span> <span class="nx">build</span><span class="o">:</span> <span class="s1">&#39;20&#39;</span> <span class="p">});</span>
+<span class="p">})();</span>
+</pre></div>
+                    </div>
+			</div>
+		</div>
+		<div class="yui-b">
+            <div class="nav">
+
+                    <div id="moduleList" class="module">
+                        <h4>Modules</h4>
+                        <ul class="content">
+                                <li class="selected"><a href="module_bacon.html" title="bacon">bacon</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="classList" class="module">
+                        <h4>Classes</h4>
+                        <ul class="content">
+                                
+                                <li class=""><a href="Bacon.html" title="Bacon">Bacon</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="fileList" class="module">
+                        <h4>Files</h4>
+                        <ul class="content">        
+                                <li class="selected"><a href="bacon.js.html" title="bacon.js">bacon.js</a></li>
+                        </ul>
+                    </div>
+
+
+
+
+
+            </div>
+		</div>
+	</div>
+	<div id="ft">
+        <hr />
+        Copyright &copy; 2008 Yahoo! Inc. All rights reserved.
+	</div>
+</div>
+<script type="text/javascript">
+    ALL_YUI_PROPS = [{"url": "Bacon.html#event_baconDone", "access": "", "host": "Bacon", "type": "event", "name": "baconDone"}, {"url": "Bacon.html#event_baconReady", "access": "", "host": "Bacon", "type": "event", "name": "baconReady"}, {"url": "Bacon.html#event_baconStart", "access": "", "host": "Bacon", "type": "event", "name": "baconStart"}, {"url": "Bacon.html#method_cook", "access": "", "host": "Bacon", "type": "method", "name": "cook"}, {"url": "Bacon.html#method_fryBacon", "access": "", "host": "Bacon", "type": "method", "name": "fryBacon"}, {"url": "Bacon.html#method_init", "access": "private", "host": "Bacon", "type": "method", "name": "init"}, {"url": "Bacon.html#method__out", "access": "private", "host": "Bacon", "type": "method", "name": "_out"}, {"url": "Bacon.html#method__over", "access": "private", "host": "Bacon", "type": "method", "name": "_over"}, {"url": "Bacon.html#method_stopFryBacon", "access": "", "host": "Bacon", "type": "method", "name": "stopFryBacon"}];
+</script>
+</body>
+</html>
