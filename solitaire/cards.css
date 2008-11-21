@@ -1,0 +1,39 @@
+#gameboard { position: relative; width: 100%; height: 600px; background-color: green; border: 1px solid black; }
+div.cardholder { position: absolute; border: 1px solid black; height: 75px; width: 50px; background-color: #fff; margin: 5px; -moz-border-radius: 5px; }
+#toprow { position: absolute; top: 0; left: 0; height: 85px; width: 100%; }
+#dealer { top 0; left: 0; background-image: url(graphics/cardback.gif); cursor: pointer; }
+#dealt { top 0; left: 55px; }
+#done_holder1 { top 0; right: 0; }
+#done_holder2 { top 0; right: 55px; }
+#done_holder3 { top 0; right: 110px; }
+#done_holder4 { top 0; right: 165px; }
+#gameplay { position: absolute; top: 85px; left: 0; width: 100%; }
+#play_holder1 { position: relative; float: left; margin-left: 15px; }
+#play_holder2 { position: relative; float: left; margin-left: 15px; }
+#play_holder3 { position: relative; float: left; margin-left: 15px; }
+#play_holder4 { position: relative; float: left; margin-left: 15px; }
+#play_holder5 { position: relative; float: left; margin-left: 15px; }
+#play_holder6 { position: relative; float: left; margin-left: 15px; }
+#play_holder7 { position: relative; float: left; margin-left: 15px; }
+
+.card { height: 75px; width: 50px; border: 1px solid black; height: 75px; width: 50px; background-color: #fff; margin: 5px; -moz-border-radius: 5px; position: absolute; cursor: move; cursor: hand; }
+.face_down {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 75px;
+    width: 50px;
+    background-image: url(graphics/cardback.gif);
+}
+.face_up {
+    width: 48px;
+    background-position: 12px 0px;
+    background-repeat: no-repeat;
+    display: block;
+}
+.red { color: red; }
+.black { color: black; }
+.hearts { background-image: url(graphics/hearts.gif); }
+.diamonds { background-image: url(graphics/diamonds.gif); }
+.spades { background-image: url(graphics/spades.gif); }
+.clubs { background-image: url(graphics/clubs.gif); }

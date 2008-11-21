@@ -95,4 +95,3 @@ if (hasReqestedVersion) {
 </script>
 </body>
 </html>
-<?php @include_once($_SERVER["DOCUMENT_ROOT"]."/wp-content/plugins/shortstat/inc.stats.php"); ?>
