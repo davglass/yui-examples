@@ -4,7 +4,7 @@ $json = new Services_JSON();
 $error = false;
 $url = str_replace('upload.php', 'tmp/', $_SERVER['PHP_SELF']);
 //Server
-$uploaddir = '/home/davglass/y/uploader/tmp/';
+$uploaddir = '/home/davglass/blog.davglass.com/files/yui/uploader/tmp/';
 //Local
 //$uploaddir = '/Users/davglass/Sites/yui/uploader/tmp/';
 $field = $_FILES['loader1'];
