@@ -16,9 +16,6 @@
 	var manageEvents = {
 		newText: function() {
 			manageElements.addNewElementList("Text: " + (ElementCount + 1));
-		},
-		newImage: function() {
-			
 		}
 	}
 	
@@ -51,7 +48,6 @@
 																	} );
 		
 		Event.on("linkAddText", "click", manageEvents.newText);
-		Event.on("linkAddImage", "click", manageEvents.newImage);
 		
 		Container.layerPanel.render( );
 		
