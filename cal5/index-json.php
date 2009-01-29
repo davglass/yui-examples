@@ -2,12 +2,12 @@
 <html>
 <head>
     <title>YUI: Calendar with Tooltip Overlay</title>
-    <link rel="stylesheet" href="http://blog.davglass.com/files/yui/css/yuicss.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset-fonts-grids/reset-fonts-grids.css"> 
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/assets/skins/sam/skin.css">     
     <link rel="stylesheet" href="http://blog.davglass.com/wp-content/themes/davglass/style.css" type="text/css">
-    <link rel="stylesheet" type="text/css" href="../css/dpSyntaxHighlighter.css">
+    <link rel="stylesheet" type="text/css" href="http://developer.yahoo.com/yui/assets/dpSyntaxHighlighter.css">
+    
     <style type="text/css" media="screen">
-		@import url( ../css/calendar_assets/calendar.css );
-		@import url( ../css/container_assets/container.css );
 /* highlight the whole row */
 		tr.hilite-row td.calcell {
 			background-color:yellow;
@@ -43,12 +43,11 @@
         }
 	</style>
 </head>
-<body>
+<body class="yui-skin-sam">
 <div id="davdoc" class="yui-t7">
-    <div id="hd"><h1 id="header"><a href="http://blog.davglass.com/">YUI: Calendar with Tooltip Overlay (YUI Version .12)</a></h1></div>
+    <div id="hd"><h1 id="header"><a href="http://blog.davglass.com/">YUI: Calendar with Tooltip Overlay</a></h1></div>
 
     <div id="bd">
-    <p>Updated this example to work with YUI Version .12. <a href="index11.php">The original can be found here</a>.</p>
     <p>This example allows you to create an associative array containing dates and tooltips. It will populate the calendar with the selected dates &amp; build the tooltip widget. So hover over the highlighted dates.</p>
     <p>UPDATED: This example now supports multiple months, I have the below calendar set with dates for the next year.</p>
     <p>Currently, I am using PHP to generate the array of dates. It would not be that hard to use JSON or XHR to accomplish this.</p>
@@ -170,12 +169,12 @@ echo($json->encode($dates));
 </textarea>
 <div id="ft">&nbsp;</div>
 </div>
-<script type="text/javascript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/common/utils/2/utilities_2.1.2.js"></script>
-<script type="text/javascript" src="../js/calendar-min.js"></script>
-<script type="text/javascript" src="../js/container-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/utilities/utilities.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/calendar/calendar-min.js"></script> 
+<script src="http://us.js2.yimg.com/us.js.yimg.com/i/ydn/yuiweb/js/dpsyntax-min-2.js"></script>
 <script type="text/javascript" src="../js/toolseffects-min.js"></script>
 <script type="text/javascript" src="../js/davglass.js"></script>
-<script type="text/javascript" src="http://us.js2.yimg.com/us.js.yimg.com/i/ydn/yuiweb/js/dpsyntax-min-2.js"></script>
 
 <script type="text/javascript">
 var cal1;
@@ -253,22 +252,22 @@ var callback = {
 }
 function addListeners() {
     for (var i = 0; i < dateHolder.length; i++) {
-        dateHolder[i].destroy();
+        try {
+            dateHolder[i].destroy();
+        } catch (e) {}
     }
     var tds = $D.getElementsByClassName('calcell', 'td', cal1.table);
     for (var i = 0; i < tds.length; i++) {
         //Parse the current date to (m/d/yyyy)
         var tmpDate = cal1.cellDates[i][1] + '/' + cal1.cellDates[i][2] + '/' + cal1.cellDates[i][0];
         if (myDates[tmpDate]) {
-            //This fails in IE, not sure why?!?!
-            try {
             cal1.selectCell(i);
-            } catch (e) {}
-            dateHolder[dateHolder.length] = myTooltip = new YAHOO.widget.Tooltip(cal1.cells[i].id + '_tooltip', { 
+            var myTooltip = new YAHOO.widget.Tooltip(cal1.cells[i].id + '_tooltip', { 
                 context: cal1.cells[i].id, 
                 text: myDates[tmpDate],
-                showDelay:500 } );
-
+                showDelay: 500
+            });
+            dateHolder[dateHolder.length] = myTooltip;
         }
     }
 }
