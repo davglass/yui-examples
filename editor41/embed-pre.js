@@ -14,10 +14,40 @@
         var el = this._getSelectedElement(),
         win = new YAHOO.widget.EditorWindow('insertmedia', {
             width: '415px'
-        });
+        }),
+        body = document.createElement('div');
+
+        //Do what you want here, just adding fluff..
+        //Here is where you check to see if the attributes exist and then setup the form properly..
+        body.innerHTML = '<p>Paste your embed string here:</p><textarea id="embedplugin"></textarea><div id="media_cont"></div>';
+        body.innerHTML += '<div id="media_control"><form>URL: <input id="embed_url" type="text" value="" size="45"></form></div>';
 
         win.setHeader('Edit Media');
+        win.setBody(body);
         this.openWindow(win);
+
+        var _button = new YAHOO.widget.Button({
+            id: Dom.generateId(),
+            container: 'media_cont',
+            label: 'Process',
+            value: 'notta'
+        });
+
+        _button.on('click', function() {
+            var el = Dom.get('embedplugin');
+            if (el && el.value && (el.value != '')) {
+                var div = document.createElement('div');
+                div.innerHTML = el.value;
+
+                Dom.setStyle('embedplugin', 'display', 'none');
+                Dom.setStyle('media_cont', 'display', 'none');
+                Dom.setStyle('media_control', 'display', 'block');
+                var em = div.getElementsByTagName('embed')[0];
+                Dom.get('embed_url').value = em.getAttribute('src');
+                this.moveWindow();
+                this.get('panel').syncIframe();
+            }
+        }, this, true);
 
         this.on('afterOpenWindow', function() {
             
@@ -28,12 +58,12 @@
 
     var myEditor = new YAHOO.widget.Editor('editor', {
         height: '300px',
-        width: '650px',
+        width: '570px',
         dompath: true,
         animate: true,
         extracss: '.yui-media { height: 100px; width: 100px; border: 1px solid black; background-color: #f2f2f2; background-image: url( media.gif ); background-position: 45% 45%; background-repeat: no-repeat; }'
     });
-    myEditor._defaultToolbar.buttons[14].buttons[2] = {
+    myEditor._defaultToolbar.buttons[10].buttons[2] = {
       type: 'push',
       label: 'Insert Media Object',
       value: 'insertmedia'
@@ -52,7 +82,6 @@
         this.currentElement = [el];
         _handleMediaWindow.call(this);
 
-        return [false]
     };
     myEditor.on('editorDoubleClick', function() {
         var el = this._getSelectedElement();
@@ -85,44 +114,6 @@
             }
         }, this, true);
     }, myEditor, true);
-
-    //New in 2.5.2+ version of YUI
-    myEditor.on('windowRender', function() {
-        var body = document.createElement('div');
-
-        //Do what you want here, just adding fluff..
-        //Here is where you check to see if the attributes exist and then setup the form properly..
-        body.innerHTML = '<p>Paste your embed string here:</p><textarea id="embedplugin"></textarea><div id="media_cont"></div>';
-        body.innerHTML += '<div id="media_control"><form>URL: <input id="embed_url" type="text" value="" size="45"></form></div>';
-        
-        myEditor._windows.insertmedia = {
-            body: body
-        };
-
-        var _button = new YAHOO.widget.Button({
-            id: Dom.generateId(),
-            container: 'media_cont',
-            label: 'Process',
-            value: 'notta'
-        });
-
-        _button.on('click', function() {
-            var el = Dom.get('embedplugin');
-            if (el && el.value && (el.value != '')) {
-                var div = document.createElement('div');
-                div.innerHTML = el.value;
-
-                Dom.setStyle('embedplugin', 'display', 'none');
-                Dom.setStyle('media_cont', 'display', 'none');
-                Dom.setStyle('media_control', 'display', 'block');
-                var em = div.getElementsByTagName('embed')[0];
-                Dom.get('embed_url').value = em.getAttribute('src');
-                this.moveWindow();
-                this.get('panel').syncIframe();
-            }
-        }, this, true);
-
-    });
     myEditor.render();
 
 })();
