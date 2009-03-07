@@ -1,7 +1,8 @@
 (function() {
     var Dom = YAHOO.util.Dom,
         Event = YAHOO.util.Event,
-        Lang = YAHOO.lang;
+        Lang = YAHOO.lang,
+        isOpen = false;
 
     var _handleWindowClose = function() {
     };
@@ -11,8 +12,9 @@
         var el = this.currentElement[0],
         win = new YAHOO.widget.EditorWindow('spellcheck', {
             width: '170px'
-        }),
-        body = document.createElement('div');
+        });
+
+        var body = document.getElementById('spell_suggest');
 
         body.innerHTML = '<strong>Suggestions:</strong><br>';
         var ul = document.createElement('ul');
@@ -62,7 +64,8 @@
         }, this, true);
 
         win.setHeader('Spelling Suggestions');
-        win.setBody(body);
+        isOpen = true;
+        //win.setBody(body);
         this.openWindow(win);
 
         
@@ -105,7 +108,7 @@
     /* }}} */
     
     myEditor.checking = false;
-    myEditor._defaultToolbar.buttons[10].buttons[2] = {
+    myEditor._defaultToolbar.buttons[14].buttons[2] = {
       type: 'push',
       label: 'Check Spelling',
       value: 'spellcheck'
@@ -123,13 +126,20 @@
 
     myEditor.on('windowspellcheckClose', function() {
         _handleWindowClose.call(this);
+        isOpen = false;
     }, myEditor, true);
     
-    myEditor.on('editorMouseDown', function() {
+    myEditor.on('editorMouseDown', function(args) {
         var el = this._getSelectedElement();
+        var el = Event.getTarget(args.ev);
         if (Dom.hasClass(el, 'yui-spellcheck')) {
             this.currentElement = [el];
-            _handleWindow.call(this);
+            if (isOpen) {
+                myEditor.closeWindow();
+                _handleWindow.call(this);
+            } else {
+                _handleWindow.call(this);
+            }
             return false;
         }
     }, myEditor, true);
@@ -149,6 +159,15 @@
     }, myEditor, true);
     myEditor.on('editorContentLoaded', function() {
         this._getDoc().body.spellcheck = false; //Turn off native spell check
+    }, myEditor, true);
+    myEditor.on('windowRender', function() {
+        var body = document.createElement('div');
+        body.id = 'spell_suggest';
+        myEditor.get('panel').body.getElementsByTagName('fieldset')[0].appendChild(body);
+
+        myEditor._windows.spellcheck = {
+            body: body
+        };
     }, myEditor, true);
     myEditor.on('toolbarLoaded', function() {
         this.toolbar.on('spellcheckClick', function() {
