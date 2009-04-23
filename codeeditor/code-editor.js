@@ -25,27 +25,9 @@
         ];
         //End Borrowed Content
 
-    //YAHOO.widget.Editor.prototype._defaultToolbar.titlebar = 'Javascript Editor';
-    //YAHOO.widget.Editor.prototype._defaultToolbar.collapse = false;
 
     YAHOO.widget.Editor.prototype._cleanIncomingHTML = function(str) {
         return str;
-    };
-    YAHOO.widget.Editor.prototype._setInitialContent = function() {
-        YAHOO.log('Populating editor body with contents of the text area', 'info', 'Editor');
-        var html = Lang.substitute(this.get('html'), {
-            TITLE: this.STR_TITLE,
-            CONTENT: this._cleanIncomingHTML(this.get('element').value),
-            CSS: this.get('css'),
-            HIDDEN_CSS: this.get('hiddencss')
-        }),
-        
-        check = true;
-        this.get('iframe').get('element').src = 'blank.htm';
-
-        if (check) {
-            this._checkLoaded();
-        }
     };
     YAHOO.widget.Editor.prototype.focusCaret = function() {
         if (this.browser.gecko) {
@@ -121,6 +103,11 @@
             var pre = this._getDoc().createElement('pre');
             this._getDoc().body.appendChild(pre);
         }
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.type = "text/css";
+        link.href = "code.css";
+        this._getDoc().getElementsByTagName('head')[0].appendChild(link);
         this.highlight(true);
     }, myEditor, true);
     myEditor.on('editorKeyPress', function(ev) {
