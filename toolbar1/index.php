@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>YUI: Editor Toolbar</title>
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/reset-fonts-grids/reset-fonts-grids.css"> 
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/assets/skins/sam/skin.css">     
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css"> 
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/assets/skins/sam/skin.css">     
     <link rel="stylesheet" href="http://blog.davglass.com/wp-content/themes/davglass/style.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="http://developer.yahoo.com/yui/assets/dpSyntaxHighlighter.css">
     <style type="text/css" media="screen">
@@ -43,6 +43,7 @@
             width: 60px;
             position: static;
             padding-left: 21px;
+            font-size: 12px;
         }
         #status {
             height: 1em;
@@ -102,12 +103,13 @@
             width: 60px;
             position: static;
             padding-left: 21px;
+            font-size: 12px;
         }
         </textarea>
         <h2>The HTML</h2>
         <textarea name="code" class="html">
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/reset-fonts-grids/reset-fonts-grids.css"> 
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/assets/skins/sam/skin.css">     
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css"> 
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/assets/skins/sam/skin.css">     
 <body class="yui-skin-sam">
 <div class="yui-editor-container">
     <div class="first-child">
@@ -115,11 +117,11 @@
     </div>
 </div>
 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/utilities/utilities.js"></script> 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/container/container_core-min.js"></script> 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/menu/menu-min.js"></script> 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/button/button-min.js"></script> 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/editor/simpleeditor-beta-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/utilities/utilities.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/container/container_core-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/menu/menu-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/button/button-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/editor/simpleeditor-min.js"></script> 
         </textarea>
         <h2>The Javascript</h2>
 <textarea name="code" class="JScript">
@@ -188,11 +190,11 @@
     </div>
     <div id="ft">&nbsp;</div>
 </div>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/utilities/utilities.js"></script> 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/container/container_core-min.js"></script> 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/menu/menu-min.js"></script> 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/button/button-min.js"></script> 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/editor/simpleeditor-beta-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/utilities/utilities.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/container/container_core-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/menu/menu-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/button/button-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/editor/simpleeditor-min.js"></script> 
 <script src="http://developer.yahoo.com/yui/assets/dpSyntaxHighlighter.js"></script>
 <script type="text/javascript" src="../js/toolseffects-min.js"></script>
 <script type="text/javascript" src="../js/davglass.js"></script>
