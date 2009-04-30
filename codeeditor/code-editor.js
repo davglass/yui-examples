@@ -50,7 +50,11 @@
             sel.addRange(range);
             span.parentNode.removeChild(span);
         } else if (this.browser.webkit) {
-            this._selectNode(this.currentElement[0]);
+            this.focus();
+            var cur = this._getDoc().getElementById('cur');
+            cur.id = '';
+            cur.innerHTML = '';
+            this._selectNode(cur);
         }
     };
     YAHOO.widget.Editor.prototype.highlight = function(focus) {
@@ -61,7 +65,7 @@
 			    var span = this._getDoc().createElement('span');
 			    this._getWindow().getSelection().getRangeAt(0).insertNode(span);
             } else if (this.browser.webkit) {
-                this._createCurrentElement('span');
+                this.execCommand('inserthtml', '<span id="cur"></span>');
             }
         }
         var html = '';
@@ -70,6 +74,7 @@
 		    html = html.replace(/<(?!span|\/span|br).*?>/gi,'');
         } else if (this.browser.webkit) {
             //YAHOO.log('1: ' + html);
+            html = html.replace(/<span id="cur"><\/span>/ig, '!!CURSOR_HERE!!');
             html = html.replace(/<\/div>/ig, '');
             html = html.replace(/<br><div>/ig, '<br>');
             html = html.replace(/<div>/ig, '<br>');
@@ -90,6 +95,9 @@
         if (this.browser.ie) {
             YAHOO.log(html);
             html = '<pre>' + html + '</pre>';
+        }
+        if (this.browser.webkit) {
+            html = html.replace('!!CURSOR_HERE!!', '<span id="cur">&nbsp;|&nbsp;</span>');
         }
         this._getDoc().body.innerHTML = html;
         if (!focus) {
@@ -122,6 +130,7 @@
         }
         if (ev.ev.charCode == 123) {
             if (!this.browser.webkit) {
+                //Wekit has an issue here..
                 //Left Paran
                 this._createCurrentElement('span');
                 var node = this._getDoc().createTextNode("  \n}");
@@ -135,17 +144,9 @@
 
         }
         if ((ev.ev.keyCode == 32) || (ev.ev.charCode == 59) || (ev.ev.charCode == 32) || (ev.ev.keyCode == 13)) {
-            var run = true;
-            if (ev.ev.keyCode == 13) {
-                if (this.browser.webkit) {
-                    run = false;
-                }
-            }
-            if (run) {
-                setTimeout(function() {
-                    self.highlight.call(self);
-                }, 100);
-            }
+            setTimeout(function() {
+                self.highlight.call(self);
+            }, 100);
         }
     }, myEditor, true);
     myEditor.render();
