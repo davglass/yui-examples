@@ -6,3 +6,7 @@ i, i b, i s, i u {color:green;font-weight:normal;} /* comments */
 s, s b, s u {color:#2A00FF;font-weight:normal;} /* strings */
 ins, ins b, ins s, ins em {color:green;} /* comments */
 a {color:blue; text-decoration: underline; } /* links */    
+body.ie { margin: 0; 
+background-position: 0 -3px;
+}
+body.ie pre { margin-left: 32px; }

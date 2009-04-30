@@ -109,9 +109,10 @@
     myEditor.on('editorContentLoaded', function() {
         if (this.browser.ie) {
             var pre = this._getDoc().createElement('pre');
+            pre.innerHTML = ' ';
             this._getDoc().body.appendChild(pre);
         }
-        var link = document.createElement('link');
+        var link = this._getDoc().createElement('link');
         link.rel = "stylesheet";
         link.type = "text/css";
         link.href = "code.css";
