@@ -29,16 +29,11 @@
     YAHOO.widget.Editor.prototype._cleanIncomingHTML = function(str) {
         return str;
     };
+    
     YAHOO.widget.Editor.prototype.focusCaret = function() {
         if (this.browser.gecko) {
             if (this._getWindow().find(cc)) {
                 this._getSelection().getRangeAt(0).deleteContents();
-            }
-        } else if (this.browser.ie) {
-            var range = this._getDoc().body.createTextRange();
-            if(range.findText(cc)){
-                range.select();
-                range.text = '';  
             }
         } else if (this.browser.opera) {
             var sel = this._getWindow().getSelection();
@@ -49,7 +44,7 @@
             sel.removeAllRanges();
             sel.addRange(range);
             span.parentNode.removeChild(span);
-        } else if (this.browser.webkit) {
+        } else if (this.browser.webkit || this.browser.ie) {
             this.focus();
             var cur = this._getDoc().getElementById('cur');
             cur.id = '';
@@ -64,7 +59,7 @@
             } else if (this.browser.opera) {
 			    var span = this._getDoc().createElement('span');
 			    this._getWindow().getSelection().getRangeAt(0).insertNode(span);
-            } else if (this.browser.webkit) {
+            } else if (this.browser.webkit || this.browser.ie) {
                 this.execCommand('inserthtml', '<span id="cur"></span>');
             }
         }
@@ -83,8 +78,12 @@
             html = html.replace(/\n/g,'<br>');
             //YAHOO.log('2: ' + html);
         } else {
+            if (this.browser.ie) {
+                html = html.replace(/<SPAN id=cur><\/SPAN>/ig, '!!CURSOR_HERE!!');
+                html = html.replace(/<SPAN id=""><\/SPAN>/ig, '');
+            }
             YAHOO.log(html);
-            html = html.replace(/<br>/g,'\n');
+            html = html.replace(/<br>/gi,'\n');
             html = html.replace(/<.*?>/g,'');
             html = html.replace(/\n/g,'<br>');
             YAHOO.log(html);
@@ -92,13 +91,9 @@
         for (var i = 0; i < keywords.length; i++) {
             html = html.replace(keywords[i].code, keywords[i].tag);
         }
-        if (this.browser.ie) {
-            YAHOO.log(html);
-            html = '<pre>' + html + '</pre>';
-        }
-        if (this.browser.webkit) {
-            html = html.replace('!!CURSOR_HERE!!', '<span id="cur">&nbsp;|&nbsp;</span>');
-        }
+
+        html = html.replace('!!CURSOR_HERE!!', '<span id="cur">&nbsp;|&nbsp;</span>');
+
         this._getDoc().body.innerHTML = html;
         if (!focus) {
             this.focusCaret();
@@ -107,47 +102,24 @@
 
     myEditor = new YAHOO.widget.Editor('editor', myConfig);
     myEditor.on('editorContentLoaded', function() {
-        if (this.browser.ie) {
-            var pre = this._getDoc().createElement('pre');
-            pre.innerHTML = ' ';
-            this._getDoc().body.appendChild(pre);
-        }
         var link = this._getDoc().createElement('link');
         link.rel = "stylesheet";
         link.type = "text/css";
         link.href = "code.css";
         this._getDoc().getElementsByTagName('head')[0].appendChild(link);
         this.highlight(true);
+        if (this.browser.ie) {
+            this._getDoc().body.style.marginLeft = '';
+        }
     }, myEditor, true);
+    myEditor.on('editorKeyDown', function(ev) {
+        if ((ev.ev.keyCode == 13) || (ev.ev.keyCode == 9)) {
+            Lang.later(100, this, this.highlight);
+        }
+    });
     myEditor.on('editorKeyPress', function(ev) {
-        var self = this;
-        //YAHOO.log(ev.ev.charCode);
-        if (ev.ev.charCode == 40) {
-            if (!this.browser.webkit) {
-                this._createCurrentElement('span');
-                var node = this._getDoc().createTextNode(")");
-                this.currentElement[0].parentNode.replaceChild(node, this.currentElement[0]);
-            }
-        }
-        if (ev.ev.charCode == 123) {
-            if (!this.browser.webkit) {
-                //Wekit has an issue here..
-                //Left Paran
-                this._createCurrentElement('span');
-                var node = this._getDoc().createTextNode("  \n}");
-                this.currentElement[0].parentNode.replaceChild(node, this.currentElement[0]);
-                var br = this._getDoc().createElement('br');
-                node.parentNode.insertBefore(br, node);
-                setTimeout(function() {
-                    self.highlight.call(self, false, '}');
-                }, 100);
-            }
-
-        }
-        if ((ev.ev.keyCode == 32) || (ev.ev.charCode == 59) || (ev.ev.charCode == 32) || (ev.ev.keyCode == 13)) {
-            setTimeout(function() {
-                self.highlight.call(self);
-            }, 100);
+        if ((ev.ev.keyCode == 32) || (ev.ev.charCode == 59) || (ev.ev.charCode == 32) || (ev.ev.keyCode == 13) || (ev.ev.charCode == 40) || (ev.ev.charCode == 123)) {
+            Lang.later(100, this, this.highlight);
         }
     }, myEditor, true);
     myEditor.render();
