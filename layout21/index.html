@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css"href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css"> 
+	<!-- Skin CSS files resize.css must load before layout.css --> 
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/assets/skins/sam/resize.css"> 
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/assets/skins/sam/layout.css"> 
+	<!-- Utility Dependencies --> 
+	<script src="http://yui.yahooapis.com/2.7.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>  
+	<script src="http://yui.yahooapis.com/2.7.0/build/dragdrop/dragdrop-min.js"></script>  
+	<script src="http://yui.yahooapis.com/2.7.0/build/element/element-min.js"></script>  
+	<!-- Optional Animation Support--> 
+	<script src="http://yui.yahooapis.com/2.7.0/build/animation/animation-min.js"></script>  
+	<!-- Optional Resize Support --> 
+	<script src="http://yui.yahooapis.com/2.7.0/build/resize/resize-min.js"></script> 
+	<!-- Source file for the Layout Manager --> 
+	<script src="http://yui.yahooapis.com/2.7.0/build/layout/layout-min.js"></script> 
+	
+	<style>
+	/* Give the header a blue background */
+	.yui-skin-sam .yui-layout {
+	    border: none;
+	    background:#592C88;
+		font-size:93%; 
+	}
+	.yui-skin-sam .yui-layout .yui-layout {
+	    border: none;
+	    background:#592C88;
+		font-size:93%; 
+	}
+	.yui-skin-sam .yui-layout .yui-layout-unit-top {
+	    background:#592C88;
+		font-size:108%; 
+		font-weight: bold;
+	}
+	.yui-skin-sam .yui-layout .yui-layout-unit-top div.yui-layout-bd {
+	    border: 1px solid #808080;
+	    border-bottom-width: 3px;
+		border-bottom-style: solid;
+		border-bottom-color: red; /*#C1A875;*/
+	}
+	/* Set the background color */
+	.yui-skin-sam .yui-layout .yui-layout-unit-center {
+	    background-color: #C1A875;
+	}
+	/* Style the text in the header */
+	.yui-skin-sam .yui-layout .yui-layout-unit div.yui-layout-hd h2 {
+	    font-weight: bold;
+	    color: #C1A875;
+	    padding: 3px;
+	}
+	/* Style the body */
+	.yui-skin-sam .yui-layout .yui-layout-unit div.yui-layout-bd {
+	    border: 1px solid #808080;
+	    border-bottom: none;
+	    border-top: none;
+	    *border-bottom-width: 0;
+	    *border-top-width: 0;
+	    /*background-color: #f2f2f2;*/
+	    text-align: left;
+	}
+	/* Add a border to the bottom of the body because there is no footer 
+	.yui-skin-sam .yui-layout .yui-layout-unit div.yui-layout-bd-noft {
+	    border-bottom: 1px solid #808080;
+	}*/
+	/* Add a border to the top of the body because there is no header 
+	.yui-skin-sam .yui-layout .yui-layout-unit div.yui-layout-bd-nohd {
+	    border-top: 1px solid #808080;
+	}*/
+	
+	/* Style the footer */
+	.yui-skin-sam .yui-layout div.yui-layout-ft {
+	    border: 1px solid #808080;
+	    border-top: none;
+	    *border-top-width: 0;
+	    background-color: #f2f2f2;
+	}
+	
+    #head       {
+				 background:#592C88; 
+				/* font-size:4em;*/ 
+				 border-collapse: collapse;
+				 color:#C1A875; 
+				 border-bottom:1px solid #C1A875;
+				}
+
+    .yui-skin-sam .yui-layout .yui-layout .yui-layout-unit div.yui-layout-bd,
+    .yui-skin-sam .yui-layout .yui-layout-unit div.yui-layout-bd {
+        background-color: transparent;
+        color: #C1A875;
+    }
+	.yui-skin-sam .yui-layout .yui-layout-unit-top .yui-layout-unit-center,
+	.yui-skin-sam .yui-layout .yui-layout-unit-bottom {
+	    background-color: #592C88;
+	}
+	.yui-skin-sam .yui-layout .yui-layout-unit-center div.yui-layout-bd {
+        color: #592C88;
+	}
+	</style>
+<title></title>
+
+<body class="yui-skin-sam">
+	<div id="header">
+        <!--table class="head" id="AutoNumber1">
+          <tr>
+            <td width="33%"><img src="http://www.wcu.edu/WebGraphics/Display/logo.jpg" alt="Western Carolina University" /></td>
+            <td width="33%" align="center"><mrBannerText Name="CenterHeader">Center Header</mrBannerText></td>
+            <td width="34%" align="right"><mrBannerText Name="RightHeader">Right Header</mrBannerText></td>
+          </tr>
+        </table-->
+        <!-- -->
+        <div id="header_left" align="center"><img src="http://www.wcu.edu/WebGraphics/Display/logo.jpg" alt="Western Carolina University" /></div>
+        <div id="header_center"><mrBannerText Name="CenterHeader">Center Header</mrBannerText></div>
+        <div id="header_right"><mrBannerText Name="RightHeader">Right Header</mrBannerText></div>
+        <!-- -->
+	</div>
+		
+	<div id="center1">
+			<table cellspacing="0" cellpadding="0" align="center" width="100%">
+				<tr valign="top">
+					<td valign="top">
+						<table class="compound" align="center" id="table2" cellSpacing="0" cellPadding="0" border="0">
+							<tr>
+								<td class="header" width="100%" colspan="3">
+									Question Prompt
+								</td>
+							</tr>
+							<tr>
+           						<td class="leftDesc">
+						          	Part 1 Description here
+							  	</td>
+							  	<td class="rightDesc">
+						          	Part 2 Description here
+							  	</td>
+							</tr>
+							<tr>
+           						<td class="leftQuestion">
+						          	Part 1 here
+							  	</td>
+							  	<td class="rightQuestion">
+						          	Part 2 here
+							  	</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+	</div>
+	
+	<div id="bottom1">
+		<!--
+		<div id="footer_left">Institutional Effectiveness and Planning</div>
+		<div id="footer_center" align="right"><input type="submit" name="_NNext" class="mrNext" style="width: 70px;" value="Next" alt="Next"></input></div>
+		 -->
+		<table cellspacing="0" cellpadding="0" align="center" width="100%">
+			<tr>
+				<td align="center">
+			    Previous
+                Next
+                GoTo
+				</td>
+			</tr>
+			<td colspan="3" align="center">
+				Institutional Effectiveness and Planning
+			</td>
+            </tr>
+		</table>
+		<!-- -->
+	</div>
+	
+	<script> 
+
+		var layout = new YAHOO.widget.Layout({ 
+		    units: [ 
+		        { position: 'top', height: 80, body: 'header' }, //Height required here 
+		        //{ position: 'right', width: 300 }, //Width required here 
+		        { position: 'bottom', height: 50, body: 'bottom1' }, //Height required here 
+		        //{ position: 'left', width: 200 }, //Width required here 
+		        { position: 'center', body: 'center1', scroll: true } 
+		    ] 
+		}); 
+		layout.on('render', function() {
+            var hd = layout.getUnitByPosition('top').get('wrap');
+            var header = new YAHOO.widget.Layout(hd, {
+                parent: layout,
+                units: [
+                    { position: 'left', width:220, body: 'header_left' },
+                    { position: 'center', body: 'header_center' },
+                    /*{ position: 'right', body: 'header_right' }*/
+                ]
+            });
+            var ft = layout.getUnitByPosition('bottom').get('wrap');
+            var footer = new YAHOO.widget.Layout(ft, {
+                parent: layout,
+                units: [
+                    { position: 'left', width:220, body: 'footer_left' },
+                    { position: 'center', body: 'footer_center' },
+                    /*{ position: 'right', body: 'footer_right' }*/
+                ]
+            });
+            //footer.render();
+            header.render();
+        });
+		layout.render(); 
+	</script>	
+</body> 
+</html>
