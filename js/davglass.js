@@ -9,8 +9,8 @@ YAHOO.davglass = {
                 $T.create('li', [$T.create('a', { href: '/files/yui/effects/', title: 'Effects' }, 'Effects')]),
                 $T.create('li', [$T.create('a', { href: '/files/yui/dhtmlforms/', title: 'DHTMLForms' }, 'DHTMLForms')]),
                 $T.create('li', [$T.create('a', { href: '/files/yui/sortable/', title: 'Sortable List' }, 'Sortable List')]),
-                $T.create('li', [$T.create('a', { href: '/files/yui/', title: 'More Code Samples' }, 'Code Samples')]),
-                $T.create('li', [$T.create('a', { href: '/files/yui/docs/', title: 'Docs' }, 'Docs')])
+                $T.create('li', [$T.create('a', { href: '/files/yui/', title: 'More Code Samples' }, 'Code Samples')])//,
+//                $T.create('li', [$T.create('a', { href: '/files/yui/docs/', title: 'Docs' }, 'Docs')])
             ])
         ]
         );
