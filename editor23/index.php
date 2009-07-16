@@ -14,7 +14,7 @@
 </head>
 <body class="yui-skin-sam">
 <div id="davdoc" class="yui-t7">
-    <div id="hd"><h1 id="header"><a href="http://blog.davglass.com/">YUI:  Editor: Multiple Edit Areas, One Editor - Advanced</a></h1></div>
+    <div id="hd"><h1 id="header"><a href="http://blog.davglass.com/">YUI: Editor: Multiple Edit Areas, One Editor - Advanced</a></h1></div>
     <div id="bd">
     <p>This is an Advanced example based on the <a href="http://developer.yahoo.com/yui/examples/editor/multi_editor.html">One Editor, Multiple Edit Areas</a> example.</p>
     <h2>The Example</h2>

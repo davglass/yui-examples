@@ -14,7 +14,7 @@
 </head>
 <body class="yui-skin-sam">
 <div id="davdoc" class="yui-t7">
-    <div id="hd"><h1 id="header"><a href="http://blog.davglass.com/">YUI:  Editor: Patch for SF #2148297</a></h1></div>
+    <div id="hd"><h1 id="header"><a href="http://blog.davglass.com/">YUI: Editor: Patch for SF #2148297</a></h1></div>
     <div id="bd">
     <p>Editor: Patch for SF #<a href="https://sourceforge.net/tracker/?func=detail&atid=836476&aid=2148297&group_id=165715">2148477</a></p>
     <p>Download the patch file: <a href="patch.js">source</a> - <a href="patch-min.js">min</a></p>
