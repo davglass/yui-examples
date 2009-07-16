@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>YUI: Editor: IM Test</title>
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.1/build/reset-fonts-grids/reset-fonts-grids.css"> 
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.1/build/assets/skins/sam/skin.css">     
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css"> 
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/assets/skins/sam/skin.css">     
     <link rel="stylesheet" href="http://blog.davglass.com/wp-content/themes/davglass/style.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="http://developer.yahoo.com/yui/assets/dpSyntaxHighlighter.css">
     <style type="text/css" media="screen">
@@ -228,10 +228,10 @@
     </div>
     <div id="ft">&nbsp;</div>
 </div>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.1/build/utilities/utilities.js"></script> 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.1/build/container/container_core-min.js"></script> 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.1/build/button/button-min.js"></script> 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.5.1/build/editor/simpleeditor-beta-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/utilities/utilities.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/container/container_core-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/button/button-min.js"></script> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/editor/simpleeditor-min.js"></script> 
 <script src="http://developer.yahoo.com/yui/assets/dpSyntaxHighlighter.js"></script>
 <script type="text/javascript" src="../js/toolseffects-min.js"></script>
 <script type="text/javascript" src="../js/davglass.js"></script>
@@ -277,6 +277,12 @@
                 }
             ]
             
+        }
+    });
+    editor.on('beforeEditorKeyDown', function(e) {
+        if (e.ev.keyCode == 13) {
+            Event.stopEvent(e.ev);
+            return false;
         }
     });
     editor.on('toolbarLoaded', function() {
