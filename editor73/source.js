@@ -53,7 +53,7 @@
             Dom.setXY(this.get('element_cont').get('element'), [-99999, -99999]);
             Dom.removeClass(this.toolbar.get('cont').parentNode, 'yui-toolbar-container-collapsed');
             myEditor.saveHTML();
-            editing.innerHTML = myEditor.get('element').value;
+            editing.value = myEditor.get('element').value;
             editing = null;
         }, myEditor, true);
     }, myEditor, true);
