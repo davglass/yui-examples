@@ -83,11 +83,7 @@
     <div id="results"></div>
     </div>
 </div>
-<script type="text/javascript" src="../js/yahoo-min.js"></script>
-<script type="text/javascript" src="../js/dom-min.js"></script>
-<script type="text/javascript" src="../js/event-min.js"></script>
-<script type="text/javascript" src="../js/animation-min.js"></script>
-<script type="text/javascript" src="../js/dragdrop-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.7.0/build/yahoo-dom-event/yahoo-dom-event.js&2.7.0/build/animation/animation-min.js&2.7.0/build/dragdrop/dragdrop-min.js"></script> 
 <script type="text/javascript">
 
 var dds = [];
