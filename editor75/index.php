@@ -66,7 +66,7 @@
     //Get the element's HTML and call the inserthtml execCommand
     var handleDrop = function() {
         var html = this.getDragEl().innerHTML;
-        myEditor.execCommand('inserthtml', html);
+        myEditor.execCommand('inserthtml', '<p>' + html + '</p>');
         resetDD(this);
     };
 
@@ -128,7 +128,7 @@
     //Get the element's HTML and call the inserthtml execCommand
     var handleDrop = function() {
         var html = this.getDragEl().innerHTML;
-        myEditor.execCommand('inserthtml', html);
+        myEditor.execCommand('inserthtml', '<p>' + html + '</p>');
         resetDD(this);
     };
 
