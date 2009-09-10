@@ -38,6 +38,8 @@
         <p>Currently the only 2 misspellings supported by this checker is <code>Thsi</code> and <code>tset</code>.</p>
         <p>You will need to provide the backend spell check server (of your choice) and modify this code in the proper places (commented).</p>
         <textarea id="editor">
+        Thsi is a tset.<br>
+        Thsi is a tset.<br>
         Thsi is a tset.
         </textarea>
         <h2>The Javascript</h2>

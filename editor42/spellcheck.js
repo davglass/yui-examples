@@ -118,7 +118,7 @@
         var data = eval('(' + o.responseText + ')');
         var html = this._getDoc().body.innerHTML;
         for (var i = 0; i < data.data.length; i++) {
-            html = html.replace(data.data[i].word, '<span class="yui-spellcheck">' + data.data[i].word + '</span>');
+            html = html.replace(new RegExp(data.data[i].word, 'g'), '<span class="yui-spellcheck">' + data.data[i].word + '</span>');
         }
         this.setEditorHTML(html);
         this._spellData = data.data;
